@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm exec *)",
+      "Bash(pnpm dev *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(open *)",
+      "Bash(screencapture -x /tmp/connections_check.png)",
+      "Bash(osascript -e 'tell application \"Google Chrome\" to activate')",
+      "Bash(osascript -e 'tell application \"Safari\" to activate')",
+      "Bash(screencapture -x /tmp/connections_app.png)",
+      "Bash(osascript -e ' *)",
+      "Bash(screencapture -x /tmp/connections_live.png)",
+      "Bash(screencapture -x /tmp/connections_final.png)",
+      "Bash(osascript)",
+      "Bash(screencapture -x /tmp/connections_safari.png)",
+      "Bash(npx tsc *)",
+      "Bash(npx tsx *)",
+      "Bash(pnpm add *)",
+      "Bash(npx vite *)",
+      "Bash(npx cap *)",
+      "Bash(keytool *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

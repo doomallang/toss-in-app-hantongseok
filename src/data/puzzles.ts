@@ -1,0 +1,923 @@
+import type { Puzzle } from "../types";
+
+export const START_DATE = new Date("2025-05-12");
+
+export function getDaysSinceStart(): number {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const start = new Date(START_DATE);
+  start.setHours(0, 0, 0, 0);
+  return Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+}
+
+export const puzzles: Puzzle[] = [
+  {
+    id: 0,
+    groups: [
+      { category: "편의점 브랜드", words: ["GS25", "CU", "세븐일레븐", "이마트24"], difficulty: 1 },
+      { category: "배달 앱", words: ["배달의민족", "쿠팡이츠", "요기요", "땡겨요"], difficulty: 2 },
+      { category: "간편 결제", words: ["토스", "카카오페이", "네이버페이", "삼성페이"], difficulty: 3 },
+      { category: "OTT 서비스", words: ["넷플릭스", "왓챠", "웨이브", "티빙"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 1,
+    groups: [
+      { category: "BTS 멤버", words: ["RM", "진", "슈가", "제이홉"], difficulty: 1 },
+      { category: "블랙핑크 멤버", words: ["지수", "제니", "로제", "리사"], difficulty: 2 },
+      { category: "에스파 멤버", words: ["카리나", "윈터", "지젤", "닝닝"], difficulty: 3 },
+      { category: "트와이스 멤버", words: ["나연", "정연", "모모", "사나"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 2,
+    groups: [
+      { category: "국·탕", words: ["갈비탕", "삼계탕", "해장국", "설렁탕"], difficulty: 1 },
+      { category: "찌개", words: ["김치찌개", "된장찌개", "순두부찌개", "부대찌개"], difficulty: 2 },
+      { category: "면 요리", words: ["냉면", "짜장면", "짬뽕", "칼국수"], difficulty: 3 },
+      { category: "밥 요리", words: ["비빔밥", "볶음밥", "돌솥밥", "영양밥"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 3,
+    groups: [
+      { category: "봄꽃", words: ["벚꽃", "개나리", "진달래", "목련"], difficulty: 1 },
+      { category: "한국 축구 선수", words: ["손흥민", "이강인", "김민재", "황희찬"], difficulty: 2 },
+      { category: "인기 예능", words: ["무한도전", "런닝맨", "놀면뭐하니", "유퀴즈"], difficulty: 3 },
+      { category: "드라마화된 웹툰", words: ["이태원클라쓰", "여신강림", "유미의세포들", "사내맞선"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 4,
+    groups: [
+      { category: "넷플릭스 한국 드라마", words: ["오징어게임", "더글로리", "마이네임", "수리남"], difficulty: 1 },
+      { category: "로맨스 드라마", words: ["사랑의불시착", "도깨비", "별그대", "꽃보다남자"], difficulty: 2 },
+      { category: "스릴러 드라마", words: ["시그널", "비밀의숲", "악의꽃", "마우스"], difficulty: 3 },
+      { category: "사극", words: ["킹덤", "철인왕후", "해치", "육룡이나르샤"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 5,
+    groups: [
+      { category: "롯데 과자", words: ["빼빼로", "꼬깔콘", "빠다코코낫", "칙촉"], difficulty: 1 },
+      { category: "오리온 과자", words: ["초코파이", "포카칩", "오!감자", "고래밥"], difficulty: 2 },
+      { category: "농심 과자", words: ["새우깡", "꼬북칩", "바나나킥", "포테토칩"], difficulty: 3 },
+      { category: "해태 과자", words: ["홈런볼", "에이스", "버터링", "맛동산"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 6,
+    groups: [
+      { category: "경상도 도시", words: ["부산", "대구", "울산", "경주"], difficulty: 1 },
+      { category: "전라도 도시", words: ["광주", "전주", "여수", "순천"], difficulty: 2 },
+      { category: "강원도 도시", words: ["춘천", "강릉", "원주", "속초"], difficulty: 3 },
+      { category: "충청도 도시", words: ["대전", "청주", "천안", "세종"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 7,
+    groups: [
+      { category: "봉준호 영화", words: ["기생충", "마더", "살인의추억", "설국열차"], difficulty: 1 },
+      { category: "박찬욱 영화", words: ["올드보이", "아가씨", "헤어질결심", "공동경비구역JSA"], difficulty: 2 },
+      { category: "류승완 영화", words: ["범죄도시", "모가디슈", "베테랑", "군함도"], difficulty: 3 },
+      { category: "최동훈 영화", words: ["도둑들", "암살", "전우치", "타짜"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 8,
+    groups: [
+      { category: "순우리말 수 (1~4)", words: ["하나", "둘", "셋", "넷"], difficulty: 1 },
+      { category: "한자어 수 (1~4)", words: ["일", "이", "삼", "사"], difficulty: 2 },
+      { category: "영어 수 (원~포)", words: ["원", "투", "쓰리", "포"], difficulty: 3 },
+      { category: "관형사 수 (1~4)", words: ["한", "두", "세", "네"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 9,
+    groups: [
+      { category: "봄 연상 단어", words: ["벚꽃", "미세먼지", "소풍", "졸업"], difficulty: 1 },
+      { category: "여름 연상 단어", words: ["수박", "선풍기", "장마", "모기"], difficulty: 2 },
+      { category: "가을 연상 단어", words: ["단풍", "고구마", "수능", "독서"], difficulty: 3 },
+      { category: "겨울 연상 단어", words: ["눈사람", "핫초코", "크리스마스", "패딩"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 10,
+    groups: [
+      { category: "의료 직업", words: ["의사", "간호사", "약사", "치과의사"], difficulty: 1 },
+      { category: "법률 직업", words: ["판사", "검사", "변호사", "법무사"], difficulty: 2 },
+      { category: "교육 직업", words: ["교사", "교수", "강사", "훈장"], difficulty: 3 },
+      { category: "공연 예술 직업", words: ["배우", "가수", "무용가", "피아니스트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 11,
+    groups: [
+      { category: "아이유 노래", words: ["좋은날", "밤편지", "팔레트", "스물셋"], difficulty: 1 },
+      { category: "BTS 노래", words: ["Dynamite", "Butter", "봄날", "DNA"], difficulty: 2 },
+      { category: "빅뱅 노래", words: ["판타스틱베이비", "뱅뱅뱅", "거짓말", "하루하루"], difficulty: 3 },
+      { category: "EXO 노래", words: ["으르렁", "중독", "growl", "Power"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 12,
+    groups: [
+      { category: "한국 치킨 브랜드", words: ["BBQ", "교촌", "BHC", "굽네"], difficulty: 1 },
+      { category: "한국 커피 브랜드", words: ["이디야", "메가커피", "빽다방", "컴포즈커피"], difficulty: 2 },
+      { category: "한국 편의점 도시락", words: ["김치볶음밥", "제육볶음", "참치마요", "소불고기"], difficulty: 3 },
+      { category: "한국 라면 브랜드", words: ["신라면", "진라면", "불닭볶음면", "삼양라면"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 13,
+    groups: [
+      { category: "독립운동가", words: ["유관순", "안중근", "윤봉길", "김구"], difficulty: 1 },
+      { category: "조선시대 왕", words: ["태조", "세종", "연산군", "영조"], difficulty: 2 },
+      { category: "삼국시대 인물", words: ["을지문덕", "광개토대왕", "계백", "온조"], difficulty: 3 },
+      { category: "한국 대통령 (초대~4대)", words: ["이승만", "윤보선", "박정희", "최규하"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 14,
+    groups: [
+      { category: "서울 유명 동네", words: ["홍대", "이태원", "강남", "명동"], difficulty: 1 },
+      { category: "부산 유명 동네", words: ["해운대", "광안리", "서면", "남포동"], difficulty: 2 },
+      { category: "제주 유명 명소", words: ["성산일출봉", "한라산", "우도", "협재해수욕장"], difficulty: 3 },
+      { category: "경주 유명 명소", words: ["불국사", "석굴암", "첨성대", "안압지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 15,
+    groups: [
+      { category: "SHINee 멤버", words: ["온유", "키", "민호", "태민"], difficulty: 1 },
+      { category: "2NE1 멤버", words: ["CL", "박봄", "산다라박", "공민지"], difficulty: 2 },
+      { category: "인피니트 멤버", words: ["성규", "우현", "엘", "동우"], difficulty: 3 },
+      { category: "카라 멤버", words: ["박규리", "한승연", "구하라", "강지영"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 16,
+    groups: [
+      { category: "한국 명산", words: ["한라산", "지리산", "설악산", "태백산"], difficulty: 1 },
+      { category: "한국 강", words: ["한강", "낙동강", "금강", "영산강"], difficulty: 2 },
+      { category: "한국 섬", words: ["제주도", "거제도", "진도", "강화도"], difficulty: 3 },
+      { category: "한국 폭포", words: ["박연폭포", "구천동폭포", "직소폭포", "정방폭포"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 17,
+    groups: [
+      { category: "구기 종목", words: ["축구", "야구", "농구", "배구"], difficulty: 1 },
+      { category: "격투 종목", words: ["유도", "태권도", "레슬링", "복싱"], difficulty: 2 },
+      { category: "수상 스포츠", words: ["수영", "다이빙", "수구", "카누"], difficulty: 3 },
+      { category: "동계 스포츠", words: ["스키", "봅슬레이", "컬링", "피겨스케이팅"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 18,
+    groups: [
+      { category: "SNS 플랫폼", words: ["인스타그램", "트위터", "페이스북", "틱톡"], difficulty: 1 },
+      { category: "메신저 앱", words: ["카카오톡", "라인", "텔레그램", "디스코드"], difficulty: 2 },
+      { category: "라이브 스트리밍", words: ["아프리카TV", "치지직", "트위치", "숲"], difficulty: 3 },
+      { category: "포털 사이트", words: ["네이버", "다음", "네이트", "구글"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 19,
+    groups: [
+      { category: "현대 자동차 모델", words: ["아반떼", "소나타", "그랜저", "투싼"], difficulty: 1 },
+      { category: "기아 자동차 모델", words: ["K5", "K8", "스포티지", "카니발"], difficulty: 2 },
+      { category: "수입 자동차 브랜드", words: ["BMW", "벤츠", "아우디", "포르쉐"], difficulty: 3 },
+      { category: "전기차 모델", words: ["아이오닉5", "EV6", "GV60", "코나일렉트릭"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 20,
+    groups: [
+      { category: "서울 궁궐", words: ["경복궁", "창덕궁", "덕수궁", "창경궁"], difficulty: 1 },
+      { category: "서울 산", words: ["북한산", "남산", "관악산", "도봉산"], difficulty: 2 },
+      { category: "서울 한강공원", words: ["여의도", "뚝섬", "반포", "난지"], difficulty: 3 },
+      { category: "서울 전통시장", words: ["광장시장", "남대문시장", "동대문시장", "노량진시장"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 21,
+    groups: [
+      { category: "민속놀이", words: ["윷놀이", "제기차기", "투호", "널뛰기"], difficulty: 1 },
+      { category: "전통 악기", words: ["가야금", "거문고", "해금", "아쟁"], difficulty: 2 },
+      { category: "한복 종류", words: ["저고리", "두루마기", "배자", "적삼"], difficulty: 3 },
+      { category: "전통 공예", words: ["도자기", "매듭공예", "옻칠", "나전칠기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 22,
+    groups: [
+      { category: "이과 과목", words: ["물리학", "화학", "생명과학", "지구과학"], difficulty: 1 },
+      { category: "사회 과목", words: ["한국사", "세계사", "경제", "사회문화"], difficulty: 2 },
+      { category: "예체능 과목", words: ["음악", "미술", "체육", "연극"], difficulty: 3 },
+      { category: "외국어 과목", words: ["영어", "일본어", "중국어", "스페인어"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 23,
+    groups: [
+      { category: "비 관련 단어", words: ["장마", "소나기", "이슬비", "폭우"], difficulty: 1 },
+      { category: "바람 관련 단어", words: ["태풍", "돌풍", "미풍", "산들바람"], difficulty: 2 },
+      { category: "눈 관련 단어", words: ["폭설", "함박눈", "눈보라", "진눈깨비"], difficulty: 3 },
+      { category: "안개·서리 관련", words: ["짙은안개", "박무", "서리", "이슬"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 24,
+    groups: [
+      { category: "포유류", words: ["고래", "박쥐", "사자", "토끼"], difficulty: 1 },
+      { category: "조류", words: ["독수리", "펭귄", "타조", "공작"], difficulty: 2 },
+      { category: "파충류", words: ["악어", "이구아나", "코브라", "도마뱀"], difficulty: 3 },
+      { category: "양서류", words: ["개구리", "두꺼비", "도롱뇽", "맹꽁이"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 25,
+    groups: [
+      { category: "현악기", words: ["바이올린", "첼로", "기타", "하프"], difficulty: 1 },
+      { category: "관악기", words: ["트럼펫", "플루트", "클라리넷", "오보에"], difficulty: 2 },
+      { category: "타악기", words: ["드럼", "마림바", "팀파니", "심벌즈"], difficulty: 3 },
+      { category: "건반악기", words: ["피아노", "오르간", "하프시코드", "아코디언"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 26,
+    groups: [
+      { category: "빨간 음식", words: ["딸기", "토마토", "체리", "수박"], difficulty: 1 },
+      { category: "노란 음식", words: ["바나나", "옥수수", "레몬", "망고"], difficulty: 2 },
+      { category: "초록 음식", words: ["시금치", "오이", "키위", "아보카도"], difficulty: 3 },
+      { category: "보라 음식", words: ["가지", "포도", "블루베리", "자색고구마"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 27,
+    groups: [
+      { category: "일본 도시", words: ["도쿄", "오사카", "교토", "후쿠오카"], difficulty: 1 },
+      { category: "중국 도시", words: ["베이징", "상하이", "광저우", "청두"], difficulty: 2 },
+      { category: "미국 도시", words: ["뉴욕", "LA", "시카고", "샌프란시스코"], difficulty: 3 },
+      { category: "유럽 도시", words: ["파리", "런던", "로마", "바르셀로나"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 28,
+    groups: [
+      { category: "의사 도구", words: ["청진기", "메스", "주사기", "혈압계"], difficulty: 1 },
+      { category: "목수 도구", words: ["망치", "톱", "끌", "대패"], difficulty: 2 },
+      { category: "요리사 도구", words: ["식칼", "냄비", "프라이팬", "채칼"], difficulty: 3 },
+      { category: "화가 도구", words: ["붓", "팔레트", "이젤", "캔버스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 29,
+    groups: [
+      { category: "소화기관", words: ["식도", "위", "소장", "대장"], difficulty: 1 },
+      { category: "순환기관", words: ["심장", "동맥", "정맥", "심방"], difficulty: 2 },
+      { category: "호흡기관", words: ["후두", "기관지", "폐", "횡격막"], difficulty: 3 },
+      { category: "감각기관", words: ["눈", "귀", "코", "혀"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 30,
+    groups: [
+      { category: "네이버 서비스", words: ["네이버웹툰", "네이버지도", "클로바", "시리즈"], difficulty: 1 },
+      { category: "카카오 서비스", words: ["카카오맵", "카카오T", "멜론", "다음"], difficulty: 2 },
+      { category: "토스 서비스", words: ["토스뱅크", "토스증권", "토스페이", "토스보험"], difficulty: 3 },
+      { category: "쿠팡 서비스", words: ["로켓배송", "로켓프레시", "쿠팡플레이", "쿠팡이츠"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 31,
+    groups: [
+      { category: "뉴진스 멤버", words: ["민지", "하니", "다니엘", "해린"], difficulty: 1 },
+      { category: "르세라핌 멤버", words: ["채원", "사쿠라", "은채", "카즈하"], difficulty: 2 },
+      { category: "아이브 멤버", words: ["안유진", "가을", "레이", "장원영"], difficulty: 3 },
+      { category: "스트레이키즈 멤버", words: ["방찬", "리노", "창빈", "현진"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 32,
+    groups: [
+      { category: "명절 음식", words: ["송편", "전", "갈비찜", "약식"], difficulty: 1 },
+      { category: "제사 음식", words: ["메", "탕국", "나물", "포"], difficulty: 2 },
+      { category: "잔치 음식", words: ["잡채", "수정과", "식혜", "편육"], difficulty: 3 },
+      { category: "길거리 음식", words: ["떡볶이", "순대", "튀김", "어묵"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 33,
+    groups: [
+      { category: "서울 주요 대학", words: ["서울대", "연세대", "고려대", "성균관대"], difficulty: 1 },
+      { category: "지방 국립대", words: ["부산대", "경북대", "전남대", "충남대"], difficulty: 2 },
+      { category: "예술 대학", words: ["홍익대", "이화여대", "한예종", "서울예대"], difficulty: 3 },
+      { category: "이공계 특성화 대학", words: ["카이스트", "포스텍", "GIST", "UNIST"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 34,
+    groups: [
+      { category: "프로그래밍 언어", words: ["파이썬", "자바", "코틀린", "스위프트"], difficulty: 1 },
+      { category: "웹 프레임워크", words: ["리액트", "뷰", "앵귤러", "스벨트"], difficulty: 2 },
+      { category: "데이터베이스", words: ["MySQL", "MongoDB", "Redis", "PostgreSQL"], difficulty: 3 },
+      { category: "클라우드 서비스", words: ["AWS", "Azure", "GCP", "Vercel"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 35,
+    groups: [
+      { category: "삼성 갤럭시 시리즈", words: ["S시리즈", "Z플립", "Z폴드", "A시리즈"], difficulty: 1 },
+      { category: "아이폰 라인업", words: ["아이폰16", "아이폰SE", "아이폰미니", "아이폰프로맥스"], difficulty: 2 },
+      { category: "스마트폰 부품", words: ["AP칩", "배터리", "카메라모듈", "디스플레이"], difficulty: 3 },
+      { category: "모바일 OS", words: ["안드로이드", "iOS", "HarmonyOS", "MIUI"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 36,
+    groups: [
+      { category: "서울 지하철 2호선 역", words: ["강남", "홍대입구", "신촌", "건대입구"], difficulty: 1 },
+      { category: "서울 지하철 1호선 역", words: ["서울역", "청량리", "종각", "영등포"], difficulty: 2 },
+      { category: "서울 지하철 9호선 역", words: ["김포공항", "여의도", "노량진", "봉은사"], difficulty: 3 },
+      { category: "경기도 지하철 역", words: ["수원", "분당", "일산", "안양"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 37,
+    groups: [
+      { category: "한국 시중 은행", words: ["국민은행", "신한은행", "하나은행", "우리은행"], difficulty: 1 },
+      { category: "인터넷 전문 은행", words: ["카카오뱅크", "케이뱅크", "토스뱅크", "핀크"], difficulty: 2 },
+      { category: "증권사", words: ["미래에셋", "삼성증권", "NH투자증권", "키움증권"], difficulty: 3 },
+      { category: "카드사", words: ["신한카드", "삼성카드", "현대카드", "롯데카드"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 38,
+    groups: [
+      { category: "한국 치킨 조리법", words: ["후라이드", "양념", "간장", "파닭"], difficulty: 1 },
+      { category: "한국 떡 종류", words: ["인절미", "가래떡", "시루떡", "화전"], difficulty: 2 },
+      { category: "김치 종류", words: ["배추김치", "깍두기", "총각김치", "열무김치"], difficulty: 3 },
+      { category: "한국 젓갈", words: ["새우젓", "오징어젓", "명란젓", "창란젓"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 39,
+    groups: [
+      { category: "보드게임", words: ["체스", "바둑", "장기", "오목"], difficulty: 1 },
+      { category: "카드게임", words: ["포커", "블랙잭", "고스톱", "UNO"], difficulty: 2 },
+      { category: "인기 모바일 게임", words: ["리니지", "배틀그라운드", "발로란트", "로스트아크"], difficulty: 3 },
+      { category: "게임 장르", words: ["RPG", "FPS", "MOBA", "어드벤처"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 40,
+    groups: [
+      { category: "국산 화장품 브랜드", words: ["설화수", "후", "이니스프리", "에뛰드"], difficulty: 1 },
+      { category: "색조 화장품 종류", words: ["파운데이션", "아이섀도", "블러셔", "립스틱"], difficulty: 2 },
+      { category: "스킨케어 단계", words: ["토너", "에센스", "세럼", "크림"], difficulty: 3 },
+      { category: "선케어 제품", words: ["선스틱", "선크림", "선쿠션", "선스프레이"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 41,
+    groups: [
+      { category: "명품 패션 브랜드", words: ["샤넬", "루이비통", "에르메스", "구찌"], difficulty: 1 },
+      { category: "스포츠 의류 브랜드", words: ["나이키", "아디다스", "뉴발란스", "컨버스"], difficulty: 2 },
+      { category: "한국 패션 브랜드", words: ["MLB", "폴로", "닥스", "빈폴"], difficulty: 3 },
+      { category: "아웃도어 브랜드", words: ["노스페이스", "블랙야크", "K2", "아이더"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 42,
+    groups: [
+      { category: "태양계 행성", words: ["수성", "금성", "화성", "목성"], difficulty: 1 },
+      { category: "별자리 (봄)", words: ["처녀자리", "사자자리", "천칭자리", "양자리"], difficulty: 2 },
+      { category: "천문 현상", words: ["일식", "월식", "유성우", "오로라"], difficulty: 3 },
+      { category: "우주 망원경", words: ["허블", "제임스웹", "케플러", "찬드라"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 43,
+    groups: [
+      { category: "세계 7대 불가사의", words: ["피라미드", "만리장성", "마추픽추", "콜로세움"], difficulty: 1 },
+      { category: "유럽 유명 건축물", words: ["에펠탑", "사그라다파밀리아", "빅벤", "파르테논"], difficulty: 2 },
+      { category: "아시아 유명 건축물", words: ["타지마할", "부르즈칼리파", "페트로나스타워", "앙코르와트"], difficulty: 3 },
+      { category: "한국 세계문화유산", words: ["해인사장경판전", "종묘", "창덕궁", "수원화성"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 44,
+    groups: [
+      { category: "음악 장르 (서양)", words: ["팝", "재즈", "록", "클래식"], difficulty: 1 },
+      { category: "한국 음악 장르", words: ["트로트", "판소리", "민요", "가요"], difficulty: 2 },
+      { category: "전자음악 장르", words: ["EDM", "하우스", "테크노", "앰비언트"], difficulty: 3 },
+      { category: "힙합 세부 장르", words: ["붐뱁", "트랩", "드릴", "로파이"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 45,
+    groups: [
+      { category: "원소 기호 (비금속)", words: ["H", "O", "N", "C"], difficulty: 1 },
+      { category: "원소 기호 (알칼리금속)", words: ["Li", "Na", "K", "Rb"], difficulty: 2 },
+      { category: "원소 기호 (귀금속)", words: ["Au", "Ag", "Pt", "Pd"], difficulty: 3 },
+      { category: "원소 기호 (희귀가스)", words: ["He", "Ne", "Ar", "Kr"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 46,
+    groups: [
+      { category: "초등 교과목", words: ["국어", "수학", "바른생활", "즐거운생활"], difficulty: 1 },
+      { category: "중학 과목", words: ["도덕", "역사", "기술가정", "정보"], difficulty: 2 },
+      { category: "수능 필수 과목", words: ["국어영역", "수학영역", "탐구영역", "제2외국어"], difficulty: 3 },
+      { category: "대학 교양 과목", words: ["글쓰기", "통계학", "심리학개론", "논리학"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 47,
+    groups: [
+      { category: "우리말 색깔", words: ["하양", "까망", "빨강", "노랑"], difficulty: 1 },
+      { category: "중간색 이름", words: ["연두", "하늘색", "보라", "주황"], difficulty: 2 },
+      { category: "전통 색이름", words: ["쪽빛", "단청", "옥색", "분홍"], difficulty: 3 },
+      { category: "빛 관련 색", words: ["무지개", "형광", "네온", "파스텔"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 48,
+    groups: [
+      { category: "포유류 새끼 이름", words: ["강아지", "송아지", "망아지", "아기고양이"], difficulty: 1 },
+      { category: "동물 울음소리", words: ["음매", "멍멍", "꽥꽥", "야옹"], difficulty: 2 },
+      { category: "한국 천연기념물 동물", words: ["진돗개", "제주마", "반달가슴곰", "황새"], difficulty: 3 },
+      { category: "멸종위기 동물", words: ["아무르표범", "수마트라호랑이", "자이언트판다", "북극곰"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 49,
+    groups: [
+      { category: "단위 (길이)", words: ["미터", "킬로미터", "센티미터", "밀리미터"], difficulty: 1 },
+      { category: "단위 (무게)", words: ["킬로그램", "그램", "톤", "파운드"], difficulty: 2 },
+      { category: "단위 (시간)", words: ["초", "분", "시간", "일"], difficulty: 3 },
+      { category: "단위 (데이터)", words: ["바이트", "킬로바이트", "메가바이트", "기가바이트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 50,
+    groups: [
+      { category: "한국 5대 궁궐", words: ["경복궁", "창덕궁", "창경궁", "경희궁"], difficulty: 1 },
+      { category: "조선시대 관직 (문반)", words: ["영의정", "좌의정", "이조판서", "대사헌"], difficulty: 2 },
+      { category: "조선시대 신분", words: ["양반", "중인", "상민", "천민"], difficulty: 3 },
+      { category: "조선시대 형벌", words: ["태형", "장형", "도형", "유형"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 51,
+    groups: [
+      { category: "한자어 가족 호칭", words: ["부", "모", "형", "제"], difficulty: 1 },
+      { category: "순우리말 가족 호칭", words: ["아버지", "어머니", "오빠", "누나"], difficulty: 2 },
+      { category: "처가 호칭", words: ["장인", "장모", "처남", "처형"], difficulty: 3 },
+      { category: "시댁 호칭", words: ["시아버지", "시어머니", "시숙", "시누이"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 52,
+    groups: [
+      { category: "세계 4대 문명", words: ["메소포타미아", "이집트", "인더스", "황하"], difficulty: 1 },
+      { category: "고대 제국", words: ["로마제국", "몽골제국", "오스만제국", "한나라"], difficulty: 2 },
+      { category: "세계대전 주요 국가 (연합국)", words: ["미국", "영국", "소련", "프랑스"], difficulty: 3 },
+      { category: "냉전 시대 사건", words: ["쿠바미사일위기", "베트남전쟁", "한국전쟁", "베를린장벽"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 53,
+    groups: [
+      { category: "물리학 법칙", words: ["관성의법칙", "만유인력의법칙", "에너지보존법칙", "상대성이론"], difficulty: 1 },
+      { category: "화학 반응 종류", words: ["산화", "환원", "중화", "연소"], difficulty: 2 },
+      { category: "생물 세포 구성요소", words: ["핵", "미토콘드리아", "리보솜", "세포막"], difficulty: 3 },
+      { category: "지구과학 개념", words: ["판구조론", "지진파", "대류권", "자기권"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 54,
+    groups: [
+      { category: "수학 도형 (2D)", words: ["삼각형", "사각형", "원", "오각형"], difficulty: 1 },
+      { category: "수학 도형 (3D)", words: ["구", "정육면체", "원기둥", "사면체"], difficulty: 2 },
+      { category: "수학 연산", words: ["덧셈", "뺄셈", "곱셈", "나눗셈"], difficulty: 3 },
+      { category: "수학 개념", words: ["소수", "피보나치", "황금비", "무리수"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 55,
+    groups: [
+      { category: "동화 속 주인공", words: ["신데렐라", "백설공주", "피노키오", "인어공주"], difficulty: 1 },
+      { category: "한국 전래동화 주인공", words: ["흥부", "심청이", "콩쥐", "선녀"], difficulty: 2 },
+      { category: "그리스 신화 영웅", words: ["헤라클레스", "아킬레우스", "오디세우스", "페르세우스"], difficulty: 3 },
+      { category: "셰익스피어 작품 주인공", words: ["햄릿", "맥베스", "오셀로", "리어왕"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 56,
+    groups: [
+      { category: "세계 음식 (이탈리아)", words: ["피자", "파스타", "리조또", "티라미수"], difficulty: 1 },
+      { category: "세계 음식 (일본)", words: ["스시", "라멘", "우동", "덴푸라"], difficulty: 2 },
+      { category: "세계 음식 (멕시코)", words: ["타코", "부리토", "엔칠라다", "과카몰레"], difficulty: 3 },
+      { category: "세계 음식 (인도)", words: ["카레", "난", "탄두리치킨", "라씨"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 57,
+    groups: [
+      { category: "세계 종교 경전", words: ["성경", "꾸란", "불경", "베다"], difficulty: 1 },
+      { category: "불교 개념", words: ["열반", "윤회", "카르마", "보살"], difficulty: 2 },
+      { category: "기독교 개념", words: ["삼위일체", "구원", "은혜", "성령"], difficulty: 3 },
+      { category: "이슬람 5대 의무", words: ["샤하다", "살라트", "자카트", "라마단"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 58,
+    groups: [
+      { category: "경제 용어 (기초)", words: ["GDP", "물가", "금리", "환율"], difficulty: 1 },
+      { category: "투자 용어", words: ["주식", "채권", "ETF", "배당"], difficulty: 2 },
+      { category: "부동산 용어", words: ["전세", "월세", "갭투자", "LTV"], difficulty: 3 },
+      { category: "암호화폐 용어", words: ["비트코인", "이더리움", "DeFi", "NFT"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 59,
+    groups: [
+      { category: "심리학 용어", words: ["트라우마", "애착", "번아웃", "리질리언스"], difficulty: 1 },
+      { category: "방어기제", words: ["억압", "투사", "합리화", "승화"], difficulty: 2 },
+      { category: "심리 실험", words: ["파블로프", "스탠퍼드감옥", "밀그램복종", "마시멜로"], difficulty: 3 },
+      { category: "성격 유형 이론", words: ["MBTI", "에니어그램", "빅파이브", "DISC"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 60,
+    groups: [
+      { category: "가전제품 (주방)", words: ["전자레인지", "에어프라이어", "밥솥", "믹서기"], difficulty: 1 },
+      { category: "가전제품 (생활)", words: ["세탁기", "건조기", "청소기", "공기청정기"], difficulty: 2 },
+      { category: "가전제품 (냉방/난방)", words: ["에어컨", "선풍기", "히터", "온풍기"], difficulty: 3 },
+      { category: "가전제품 (엔터테인먼트)", words: ["TV", "프로젝터", "스피커", "게임기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 61,
+    groups: [
+      { category: "한국 프로야구 (KBO) 구단", words: ["두산베어스", "LG트윈스", "삼성라이온즈", "KIA타이거즈"], difficulty: 1 },
+      { category: "한국 프로축구 (K리그) 구단", words: ["전북현대", "울산현대", "수원삼성", "FC서울"], difficulty: 2 },
+      { category: "한국 프로농구 (KBL) 구단", words: ["서울SK", "부산KCC", "고양캐롯", "원주DB"], difficulty: 3 },
+      { category: "한국 프로배구 구단", words: ["대한항공", "현대캐피탈", "KB손해보험", "우리카드"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 62,
+    groups: [
+      { category: "유명 철학자 (고대)", words: ["소크라테스", "플라톤", "아리스토텔레스", "에피쿠로스"], difficulty: 1 },
+      { category: "유명 철학자 (근대)", words: ["데카르트", "칸트", "헤겔", "니체"], difficulty: 2 },
+      { category: "동양 사상가", words: ["공자", "노자", "맹자", "장자"], difficulty: 3 },
+      { category: "한국 사상가", words: ["이황", "이이", "정약용", "최제우"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 63,
+    groups: [
+      { category: "세계 유명 화가", words: ["레오나르도다빈치", "미켈란젤로", "렘브란트", "고흐"], difficulty: 1 },
+      { category: "인상파 화가", words: ["모네", "드가", "르누아르", "피사로"], difficulty: 2 },
+      { category: "현대미술 화가", words: ["피카소", "달리", "워홀", "폴록"], difficulty: 3 },
+      { category: "한국 유명 화가", words: ["박수근", "이중섭", "김환기", "장욱진"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 64,
+    groups: [
+      { category: "인터넷 신조어 (긍정)", words: ["레전드", "꿀잼", "갓생", "핵인싸"], difficulty: 1 },
+      { category: "인터넷 신조어 (부정)", words: ["노잼", "현타", "빡침", "극혐"], difficulty: 2 },
+      { category: "MZ 세대 줄임말", words: ["TMI", "JMT", "ㅇㅈ", "억텐"], difficulty: 3 },
+      { category: "직장인 줄임말", words: ["칼퇴", "야근", "점메추", "회바회"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 65,
+    groups: [
+      { category: "보석 (투명)", words: ["다이아몬드", "수정", "토파즈", "아쿠아마린"], difficulty: 1 },
+      { category: "보석 (유색)", words: ["루비", "에메랄드", "사파이어", "자수정"], difficulty: 2 },
+      { category: "유기 보석", words: ["진주", "산호", "호박", "조개껍데기"], difficulty: 3 },
+      { category: "한국 전통 장신구", words: ["노리개", "비녀", "귀걸이", "반지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 66,
+    groups: [
+      { category: "한국 전통 술", words: ["막걸리", "소주", "청주", "동동주"], difficulty: 1 },
+      { category: "세계 맥주 (나라)", words: ["기네스", "하이네켄", "버드와이저", "아사히"], difficulty: 2 },
+      { category: "와인 종류", words: ["레드와인", "화이트와인", "로제와인", "샴페인"], difficulty: 3 },
+      { category: "칵테일 종류", words: ["모히또", "마가리타", "코스모폴리탄", "올드패션드"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 67,
+    groups: [
+      { category: "한국 사자성어 (성공)", words: ["일취월장", "마이동풍", "각고면려", "형설지공"], difficulty: 1 },
+      { category: "한국 사자성어 (관계)", words: ["죽마고우", "막역지우", "문경지교", "관포지교"], difficulty: 2 },
+      { category: "한국 사자성어 (상황)", words: ["설상가상", "엎친데덮친격", "전화위복", "새옹지마"], difficulty: 3 },
+      { category: "한국 속담", words: ["가는말이고와야", "낫놓고기역", "원숭이도나무에서", "티끌모아태산"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 68,
+    groups: [
+      { category: "대중교통 수단", words: ["버스", "지하철", "택시", "KTX"], difficulty: 1 },
+      { category: "개인 이동 수단", words: ["자전거", "킥보드", "오토바이", "자동차"], difficulty: 2 },
+      { category: "수상 교통수단", words: ["여객선", "크루즈", "유람선", "카페리"], difficulty: 3 },
+      { category: "항공 관련 용어", words: ["이코노미", "비즈니스석", "수하물", "트랜짓"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 69,
+    groups: [
+      { category: "직업 (크리에이터)", words: ["유튜버", "인플루언서", "스트리머", "웹툰작가"], difficulty: 1 },
+      { category: "직업 (IT)", words: ["개발자", "디자이너", "데이터사이언티스트", "PM"], difficulty: 2 },
+      { category: "직업 (금융)", words: ["펀드매니저", "애널리스트", "회계사", "보험설계사"], difficulty: 3 },
+      { category: "직업 (공공)", words: ["소방관", "경찰관", "군인", "공무원"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 70,
+    groups: [
+      { category: "날씨 예보 용어", words: ["맑음", "흐림", "강수확률", "미세먼지"], difficulty: 1 },
+      { category: "기후 현상", words: ["엘니뇨", "라니냐", "열돔", "블로킹"], difficulty: 2 },
+      { category: "자연재해", words: ["지진", "쓰나미", "화산폭발", "태풍"], difficulty: 3 },
+      { category: "환경 문제", words: ["온난화", "탄소중립", "미세플라스틱", "오존층"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 71,
+    groups: [
+      { category: "SNS 용어", words: ["팔로우", "좋아요", "댓글", "공유"], difficulty: 1 },
+      { category: "유튜브 용어", words: ["구독", "알림설정", "쇼츠", "라이브"], difficulty: 2 },
+      { category: "인스타그램 기능", words: ["스토리", "릴스", "하이라이트", "DM"], difficulty: 3 },
+      { category: "커뮤니티 용어", words: ["게시글", "댓글", "대댓글", "추천"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 72,
+    groups: [
+      { category: "건축 양식 (서양)", words: ["고딕", "바로크", "로마네스크", "모더니즘"], difficulty: 1 },
+      { category: "한국 전통 건축 요소", words: ["기와", "처마", "단청", "주춧돌"], difficulty: 2 },
+      { category: "인테리어 스타일", words: ["미니멀", "스칸디나비안", "빈티지", "인더스트리얼"], difficulty: 3 },
+      { category: "건물 공간 용어", words: ["거실", "주방", "욕실", "서재"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 73,
+    groups: [
+      { category: "한국 웹툰 플랫폼", words: ["네이버웹툰", "카카오웹툰", "레진코믹스", "탑툰"], difficulty: 1 },
+      { category: "인기 웹툰 (로맨스)", words: ["여신강림", "유미의세포들", "사내맞선", "외모지상주의"], difficulty: 2 },
+      { category: "인기 웹툰 (액션)", words: ["신의탑", "노블레스", "갓오브하이스쿨", "로어올림푸스"], difficulty: 3 },
+      { category: "웹툰 용어", words: ["화수", "정주행", "단행본", "외전"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 74,
+    groups: [
+      { category: "제주도 음식", words: ["흑돼지", "갈치조림", "해물뚝배기", "오메기떡"], difficulty: 1 },
+      { category: "부산 음식", words: ["밀면", "돼지국밥", "씨앗호떡", "어묵"], difficulty: 2 },
+      { category: "전주 음식", words: ["전주비빔밥", "콩나물국밥", "피순대", "모주"], difficulty: 3 },
+      { category: "춘천 음식", words: ["닭갈비", "막국수", "감자전", "옥수수"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 75,
+    groups: [
+      { category: "한국 유명 산사", words: ["불국사", "해인사", "통도사", "송광사"], difficulty: 1 },
+      { category: "한국 유명 성당", words: ["명동성당", "전동성당", "약현성당", "죽림동성당"], difficulty: 2 },
+      { category: "한국 유명 교회", words: ["여의도순복음교회", "사랑의교회", "온누리교회", "새문안교회"], difficulty: 3 },
+      { category: "한국 유명 서원", words: ["도산서원", "소수서원", "병산서원", "옥산서원"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 76,
+    groups: [
+      { category: "의성어 (동물)", words: ["꼬끼오", "야옹", "멍멍", "음매"], difficulty: 1 },
+      { category: "의태어 (움직임)", words: ["아장아장", "폴짝폴짝", "휘청휘청", "살금살금"], difficulty: 2 },
+      { category: "의성어 (자연)", words: ["쨍쨍", "우르릉", "쏴아", "쿵쿵"], difficulty: 3 },
+      { category: "의태어 (모습)", words: ["반짝반짝", "흔들흔들", "구불구불", "삐죽삐죽"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 77,
+    groups: [
+      { category: "커피 음료", words: ["아메리카노", "라떼", "카푸치노", "에스프레소"], difficulty: 1 },
+      { category: "차 종류", words: ["녹차", "홍차", "보이차", "우롱차"], difficulty: 2 },
+      { category: "여름 음료", words: ["아이스티", "레모네이드", "스무디", "에이드"], difficulty: 3 },
+      { category: "건강 음료", words: ["홍삼", "유산균", "프로틴쉐이크", "콤부차"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 78,
+    groups: [
+      { category: "한국 여자 테니스·골프 선수", words: ["박세리", "박인비", "고진영", "전인지"], difficulty: 1 },
+      { category: "한국 올림픽 금메달리스트 (역도·레슬링)", words: ["전병관", "심권호", "장미란", "김일"], difficulty: 2 },
+      { category: "한국 빙상 선수", words: ["김연아", "이상화", "차준환", "최민정"], difficulty: 3 },
+      { category: "한국 육상·수영 선수", words: ["황영조", "박태환", "이봉주", "김서영"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 79,
+    groups: [
+      { category: "공구 종류", words: ["드라이버", "렌치", "플라이어", "줄자"], difficulty: 1 },
+      { category: "문구류", words: ["볼펜", "형광펜", "수정테이프", "스테이플러"], difficulty: 2 },
+      { category: "미술 도구", words: ["연필", "수채물감", "스케치북", "팔레트"], difficulty: 3 },
+      { category: "측정 도구", words: ["자", "각도기", "컴퍼스", "저울"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 80,
+    groups: [
+      { category: "인체 기관 (뇌)", words: ["대뇌", "소뇌", "간뇌", "뇌줄기"], difficulty: 1 },
+      { category: "근육 종류", words: ["심근", "골격근", "평활근", "횡격막"], difficulty: 2 },
+      { category: "혈액 구성요소", words: ["적혈구", "백혈구", "혈소판", "혈장"], difficulty: 3 },
+      { category: "뼈 종류", words: ["두개골", "척추", "갈비뼈", "골반"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 81,
+    groups: [
+      { category: "노벨상 분야", words: ["물리학", "화학", "의학", "평화"], difficulty: 1 },
+      { category: "한국인 노벨상 수상자 관련", words: ["김대중", "한강", "평화상", "문학상"], difficulty: 2 },
+      { category: "필즈상 수상자 (국가)", words: ["미국", "프랑스", "영국", "러시아"], difficulty: 3 },
+      { category: "세계적 과학상", words: ["노벨상", "튜링상", "필즈상", "프리츠커상"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 82,
+    groups: [
+      { category: "한국 신문사", words: ["조선일보", "중앙일보", "동아일보", "한겨레"], difficulty: 1 },
+      { category: "한국 방송사", words: ["KBS", "MBC", "SBS", "JTBC"], difficulty: 2 },
+      { category: "한국 통신사", words: ["SK텔레콤", "KT", "LG유플러스", "알뜰폰"], difficulty: 3 },
+      { category: "한국 IT 대기업", words: ["삼성전자", "SK하이닉스", "LG전자", "카카오"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 83,
+    groups: [
+      { category: "건강 검진 항목", words: ["혈압", "혈당", "콜레스테롤", "체질량지수"], difficulty: 1 },
+      { category: "약 종류", words: ["진통제", "항생제", "소화제", "수면제"], difficulty: 2 },
+      { category: "한방 치료", words: ["침", "뜸", "부항", "한약"], difficulty: 3 },
+      { category: "현대 의료 기기", words: ["MRI", "CT", "초음파", "내시경"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 84,
+    groups: [
+      { category: "한국 재벌 그룹", words: ["삼성", "현대", "SK", "LG"], difficulty: 1 },
+      { category: "한국 스타트업 유니콘", words: ["토스", "당근", "마켓컬리", "직방"], difficulty: 2 },
+      { category: "한국 게임 회사", words: ["넥슨", "엔씨소프트", "넷마블", "크래프톤"], difficulty: 3 },
+      { category: "한국 바이오 기업", words: ["셀트리온", "삼성바이오로직스", "한미약품", "유한양행"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 85,
+    groups: [
+      { category: "악기 (한국 전통)", words: ["북", "장구", "꽹과리", "징"], difficulty: 1 },
+      { category: "악기 (서양 오케스트라 현악)", words: ["바이올린", "비올라", "첼로", "콘트라베이스"], difficulty: 2 },
+      { category: "악기 (밴드)", words: ["일렉기타", "베이스", "드럼", "키보드"], difficulty: 3 },
+      { category: "악기 (월드뮤직)", words: ["디제리두", "카혼", "디저리두", "우쿨렐레"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 86,
+    groups: [
+      { category: "한국 전통 문양", words: ["태극", "무궁화", "봉황", "거북"], difficulty: 1 },
+      { category: "전통 색 조합 (단청)", words: ["청색", "적색", "황색", "녹색"], difficulty: 2 },
+      { category: "한국 전통 공예 기법", words: ["자개", "옻칠", "금박", "조각"], difficulty: 3 },
+      { category: "전통 문양 (기하)", words: ["격자", "능형", "뇌문", "파도"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 87,
+    groups: [
+      { category: "한국 대표 관광지 (서울)", words: ["경복궁", "N서울타워", "인사동", "북촌한옥마을"], difficulty: 1 },
+      { category: "한국 대표 관광지 (지방)", words: ["안동하회마을", "보성녹차밭", "순천만", "담양대나무숲"], difficulty: 2 },
+      { category: "섬 여행지", words: ["제주도", "완도", "울릉도", "독도"], difficulty: 3 },
+      { category: "한국 겨울 여행지", words: ["화천산천어축제", "태백산눈꽃축제", "대관령", "평창"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 88,
+    groups: [
+      { category: "세계 명품 시계 브랜드", words: ["롤렉스", "오메가", "태그호이어", "파텍필립"], difficulty: 1 },
+      { category: "한국 시계 브랜드", words: ["로만손", "오리엔트", "갤럭시워치", "G쇼크"], difficulty: 2 },
+      { category: "시간 관련 어휘", words: ["새벽", "황혼", "정오", "자정"], difficulty: 3 },
+      { category: "달력 관련 용어", words: ["음력", "양력", "절기", "윤달"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 89,
+    groups: [
+      { category: "요가 자세", words: ["다운독", "코브라", "트리포즈", "아기자세"], difficulty: 1 },
+      { category: "필라테스 동작", words: ["롤업", "플랭크", "브릿지", "사이드킥"], difficulty: 2 },
+      { category: "헬스 운동 (상체)", words: ["벤치프레스", "숄더프레스", "풀업", "컬"], difficulty: 3 },
+      { category: "헬스 운동 (하체)", words: ["스쿼트", "런지", "레그프레스", "데드리프트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 90,
+    groups: [
+      { category: "한국 유명 예능 MC", words: ["유재석", "강호동", "신동엽", "이경규"], difficulty: 1 },
+      { category: "한국 코미디언", words: ["박명수", "정형돈", "노홍철", "길"], difficulty: 2 },
+      { category: "한국 인기 유튜버", words: ["워크맨", "피식대학", "빠니보틀", "침착맨"], difficulty: 3 },
+      { category: "한국 오디션 출신 스타", words: ["아이유", "박지민", "장범준", "악동뮤지션"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 91,
+    groups: [
+      { category: "한국 국경일", words: ["삼일절", "광복절", "개천절", "한글날"], difficulty: 1 },
+      { category: "한국 명절", words: ["설날", "추석", "단오", "정월대보름"], difficulty: 2 },
+      { category: "24절기 (봄)", words: ["입춘", "우수", "경칩", "춘분"], difficulty: 3 },
+      { category: "24절기 (여름)", words: ["입하", "소만", "망종", "하지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 92,
+    groups: [
+      { category: "반려동물 용품", words: ["사료", "리드줄", "집사발", "캣타워"], difficulty: 1 },
+      { category: "반려동물 종류 (개)", words: ["말티즈", "포메라니안", "비숑프리제", "시베리안허스키"], difficulty: 2 },
+      { category: "반려동물 종류 (고양이)", words: ["페르시안", "러시안블루", "스핑크스", "브리티시숏헤어"], difficulty: 3 },
+      { category: "반려동물 관련 앱", words: ["포동", "핏펫", "petpermit", "어바웃펫"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 93,
+    groups: [
+      { category: "한국 전통 놀이 도구", words: ["팽이", "연", "딱지", "구슬"], difficulty: 1 },
+      { category: "추억의 장난감", words: ["타마고치", "레고", "공기", "요요"], difficulty: 2 },
+      { category: "추억의 과자 (90년대)", words: ["달고나", "뽑기", "쫀드기", "아폴로"], difficulty: 3 },
+      { category: "추억의 캐릭터", words: ["뽀로로", "타요", "로보카폴리", "시크릿쥬쥬"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 94,
+    groups: [
+      { category: "스타벅스 음료", words: ["돌체라떼", "프라푸치노", "콜드브루", "자바칩"], difficulty: 1 },
+      { category: "한국 디저트", words: ["팥빙수", "약과", "수제비", "호떡"], difficulty: 2 },
+      { category: "빵 종류", words: ["소보로", "크림빵", "단팥빵", "슈크림"], difficulty: 3 },
+      { category: "케이크 종류", words: ["치즈케이크", "티라미수", "마카롱", "에클레어"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 95,
+    groups: [
+      { category: "한국 드라마 (2023~2024)", words: ["무빙", "마스크걸", "킹더랜드", "닥터슬럼프"], difficulty: 1 },
+      { category: "넷플릭스 한국 예능", words: ["솔로지옥", "피지컬100", "흑백요리사", "데블스플랜"], difficulty: 2 },
+      { category: "한국 영화 (2020년대)", words: ["헤어질결심", "브로커", "한산", "외계+인"], difficulty: 3 },
+      { category: "한국 애니메이션", words: ["넛잡", "레드슈즈", "오버더문", "두더지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 96,
+    groups: [
+      { category: "패스트푸드 브랜드", words: ["맥도날드", "버거킹", "롯데리아", "KFC"], difficulty: 1 },
+      { category: "한식 프랜차이즈", words: ["본죽", "한솥도시락", "미소야", "또래오래"], difficulty: 2 },
+      { category: "편의점 디저트 (인기)", words: ["삼각김밥", "샌드위치", "컵라면", "핫바"], difficulty: 3 },
+      { category: "배달 인기 메뉴", words: ["떡볶이", "치킨", "피자", "족발"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 97,
+    groups: [
+      { category: "한국 대표 수출품", words: ["반도체", "자동차", "조선", "K-팝"], difficulty: 1 },
+      { category: "한국 세계 1위 기술", words: ["OLED", "DRAM", "LNG선", "배터리"], difficulty: 2 },
+      { category: "한국 스포츠 세계 1위 (역대)", words: ["양궁", "쇼트트랙", "태권도", "골프"], difficulty: 3 },
+      { category: "한류 콘텐츠", words: ["K-드라마", "K-뷰티", "K-푸드", "K-웹툰"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 98,
+    groups: [
+      { category: "숫자 관용표현", words: ["일석이조", "삼삼오오", "사면초가", "오리무중"], difficulty: 1 },
+      { category: "동물 관용표현", words: ["개구리올챙이적", "호랑이굴에", "까마귀고기먹었나", "쥐도새도모르게"], difficulty: 2 },
+      { category: "신체 관용표현", words: ["발을뻗고자다", "손발이맞다", "눈코뜰새없다", "귀를기울이다"], difficulty: 3 },
+      { category: "색깔 관용표현", words: ["백지상태", "청천벽력", "홍일점", "흑역사"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 99,
+    groups: [
+      { category: "2024 파리올림픽 한국 금메달 종목", words: ["양궁", "사격", "펜싱", "태권도"], difficulty: 1 },
+      { category: "2024 파리올림픽 개최지 명소", words: ["에펠탑", "베르사유궁전", "노트르담", "루브르"], difficulty: 2 },
+      { category: "올림픽 금지 약물", words: ["EPO", "성장호르몬", "스테로이드", "암페타민"], difficulty: 3 },
+      { category: "올림픽 역대 최다 금메달 국가", words: ["미국", "소련", "중국", "영국"], difficulty: 4 },
+    ],
+  },
+];
+
+export function getTodaysPuzzle(): Puzzle {
+  const days = getDaysSinceStart();
+  return puzzles[((days % puzzles.length) + puzzles.length) % puzzles.length];
+}
+
+export function getPuzzleNumber(): number {
+  return getDaysSinceStart() + 1;
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">한통속</string>
+    <string name="title_activity_main">한통속</string>
+    <string name="package_name">com.doomole.hantongseok</string>
+    <string name="custom_url_scheme">com.doomole.hantongseok</string>
+</resources>
