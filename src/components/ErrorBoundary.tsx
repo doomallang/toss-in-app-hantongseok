@@ -25,7 +25,7 @@ export class ErrorBoundary extends Component<Props, State> {
     try {
       for (let i = localStorage.length - 1; i >= 0; i--) {
         const key = localStorage.key(i);
-        if (key?.startsWith("connections-") && !key.includes("stats") && !key.includes("colorblind") && !key.includes("tutorial")) {
+        if (key?.startsWith("connections-") && !key.includes("stats") && !key.includes("tutorial")) {
           localStorage.removeItem(key!);
         }
       }
