@@ -19,17 +19,18 @@ function getWordDifficulty(word: string, groups: Group[]): Difficulty {
 }
 
 function getKey(puzzleId: number): string {
-  return `connections-${puzzleId}-${new Date().toDateString()}`;
+  return `connections-save-${puzzleId}`;
 }
 
 function cleanOldSaves(puzzleId: number) {
-  const currentKey = getKey(puzzleId);
+  const currentSaveKey = getKey(puzzleId);
+  const currentTimerKey = `connections-timer-${puzzleId}`;
   const toDelete: string[] = [];
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    if (key?.startsWith("connections-") && key !== currentKey) {
-      toDelete.push(key);
-    }
+    if (!key) continue;
+    if (key.startsWith("connections-save-") && key !== currentSaveKey) toDelete.push(key);
+    if (key.startsWith("connections-timer-") && key !== currentTimerKey) toDelete.push(key);
   }
   toDelete.forEach((k) => localStorage.removeItem(k));
 }
@@ -90,8 +91,8 @@ export function useGame(puzzle: Puzzle) {
 
   const selectWord = useCallback(
     (word: string) => {
-      if (state.status !== "playing") return;
       setState((prev) => {
+        if (prev.status !== "playing") return prev;
         if (prev.selectedWords.includes(word)) {
           return { ...prev, selectedWords: prev.selectedWords.filter((w) => w !== word), oneAway: false };
         }
@@ -99,7 +100,7 @@ export function useGame(puzzle: Puzzle) {
         return { ...prev, selectedWords: [...prev.selectedWords, word], oneAway: false };
       });
     },
-    [state.status],
+    [],
   );
 
   const submitGuess = useCallback(() => {

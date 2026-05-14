@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import type { Puzzle } from "../types";
 import { puzzles as builtinPuzzles } from "../data/puzzles";
-import { PUZZLES_URL, PUZZLES_CACHE_KEY } from "../puzzleConfig";
+import { PUZZLES_URL, PUZZLES_CACHE_KEY, PUZZLES_CACHE_TS_KEY, PUZZLES_CACHE_TTL_MS } from "../puzzleConfig";
+
+function isCacheExpired(): boolean {
+  const ts = localStorage.getItem(PUZZLES_CACHE_TS_KEY);
+  if (!ts) return true;
+  return Date.now() - parseInt(ts, 10) > PUZZLES_CACHE_TTL_MS;
+}
 
 function loadCache(): Puzzle[] | null {
+  if (isCacheExpired()) return null;
   try {
     const raw = localStorage.getItem(PUZZLES_CACHE_KEY);
     if (!raw) return null;
@@ -17,6 +24,7 @@ function loadCache(): Puzzle[] | null {
 function saveCache(data: Puzzle[]) {
   try {
     localStorage.setItem(PUZZLES_CACHE_KEY, JSON.stringify(data));
+    localStorage.setItem(PUZZLES_CACHE_TS_KEY, String(Date.now()));
   } catch {
     // storage full 등 무시
   }

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useGame, MAX_LIVES } from "../hooks/useGame";
-import { useStats, loadStats } from "../hooks/useStats";
+import { useStats } from "../hooks/useStats";
 import { useTimer, formatTime } from "../hooks/useTimer";
 import { WordCard } from "./WordCard";
 import { SolvedGroup } from "./SolvedGroup";
@@ -8,7 +8,8 @@ import { LivesIndicator } from "./LivesIndicator";
 import { ResultModal } from "./ResultModal";
 import { Confetti } from "./Confetti";
 import type { Puzzle, Difficulty, Group } from "../types";
-import { DIFFICULTY_SHAPES } from "../contexts/ColorBlindContext";
+
+const MAX_HINTS = 3;
 
 const DIFFICULTY_COLORS: Record<Difficulty, string> = {
   1: "#f9df6d",
@@ -25,7 +26,7 @@ interface Props {
 export function GameBoard({ puzzle, puzzleNumber }: Props) {
   const { state, selectWord, submitGuess, shuffleWords, deselectAll } = useGame(puzzle);
   const { shuffledWords, selectedWords, solvedGroups, lives, status, guessHistory, oneAway } = state;
-  const { recordResult } = useStats();
+  const { stats, recordResult } = useStats();
 
   const [showResult, setShowResult] = useState(status !== "playing");
   const [shaking, setShaking] = useState(false);
@@ -57,11 +58,11 @@ export function GameBoard({ puzzle, puzzleNumber }: Props) {
     if (status === "playing") return;
     if (!resultRecordedRef.current) {
       resultRecordedRef.current = true;
-      recordResult(puzzle.id, status === "won", MAX_LIVES - lives);
+      recordResult(puzzle.id, status === "won", MAX_LIVES - lives, hintWords.size);
     }
     const timer = setTimeout(() => setShowResult(true), status === "won" ? 1200 : 300);
     return () => clearTimeout(timer);
-  }, [status, lives, puzzle.id, recordResult]);
+  }, [status, lives, puzzle.id, recordResult, hintWords.size]);
 
   // 틀렸을 때 흔들기
   useEffect(() => {
@@ -105,14 +106,13 @@ export function GameBoard({ puzzle, puzzleNumber }: Props) {
   }, [selectedWords.length, isPlaying, solvingWords, handleSubmit]);
 
   const handleHint = () => {
+    if (hintWords.size >= MAX_HINTS) return;
     const candidates = shuffledWords.filter((w) => !hintWords.has(w));
     if (candidates.length === 0) return;
     const word = candidates[Math.floor(Math.random() * candidates.length)];
     const group = puzzle.groups.find((g) => g.words.includes(word));
     if (!group) return;
-    // color|shape 형식으로 저장
-    const value = `${DIFFICULTY_COLORS[group.difficulty]}|${DIFFICULTY_SHAPES[group.difficulty]}`;
-    setHintWords((prev) => new Map([...prev, [word, value]]));
+    setHintWords((prev) => new Map([...prev, [word, DIFFICULTY_COLORS[group.difficulty]]]));
   };
 
   return (
@@ -126,8 +126,7 @@ export function GameBoard({ puzzle, puzzleNumber }: Props) {
         <div className={`word-grid${shaking ? " shaking" : ""}`}>
           {shuffledWords.map((word) => {
             const solving = solvingWords?.words.includes(word) ?? false;
-            const hintVal = hintWords.get(word);
-            const [hintColor, hintShape] = hintVal ? hintVal.split("|") : [];
+            const hintColor = hintWords.get(word);
             return (
               <WordCard
                 key={word}
@@ -137,7 +136,6 @@ export function GameBoard({ puzzle, puzzleNumber }: Props) {
                 solving={solving}
                 solvingColor={solvingWords?.color}
                 hintColor={hintColor}
-                hintShape={hintShape}
                 onClick={() => selectWord(word)}
               />
             );
@@ -163,8 +161,12 @@ export function GameBoard({ puzzle, puzzleNumber }: Props) {
         >
           선택 해제
         </button>
-        <button className="btn btn-secondary" onClick={handleHint} disabled={!isPlaying || !!solvingWords}>
-          힌트
+        <button
+          className="btn btn-secondary"
+          onClick={handleHint}
+          disabled={!isPlaying || !!solvingWords || hintWords.size >= MAX_HINTS}
+        >
+          힌트 ({MAX_HINTS - hintWords.size})
         </button>
       </div>
 
@@ -179,8 +181,9 @@ export function GameBoard({ puzzle, puzzleNumber }: Props) {
           status={status}
           puzzleNumber={puzzleNumber}
           guessHistory={guessHistory}
-          stats={loadStats()}
+          stats={stats}
           elapsed={elapsed}
+          hintCount={hintWords.size}
           onClose={() => setShowResult(false)}
         />
       )}

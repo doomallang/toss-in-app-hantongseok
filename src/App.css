@@ -17,7 +17,7 @@
 .header {
   text-align: center;
   padding: 8px 0 4px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header-top {
@@ -45,11 +45,11 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid #ccc;
+  border: 2px solid var(--color-border);
   background: none;
   font-size: 14px;
   font-weight: 700;
-  color: #888;
+  color: var(--color-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -58,18 +58,18 @@
 }
 
 .help-btn:hover {
-  border-color: #1a1a1a;
-  color: #1a1a1a;
+  border-color: var(--color-text);
+  color: var(--color-text);
 }
 
 .cb-toggle-btn {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid #ccc;
+  border: 2px solid var(--color-border);
   background: none;
   font-size: 14px;
-  color: #888;
+  color: var(--color-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -79,52 +79,32 @@
 }
 
 .cb-toggle-btn--on {
-  border-color: #1a1a1a;
-  background: #1a1a1a;
-  color: #fff;
+  border-color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
 }
 
-/* 색맹 모드 — 모양 배지 */
-.cb-shape {
-  font-size: 11px;
-  margin-right: 2px;
-}
-
-/* WordCard 힌트 모양 배지 */
+/* WordCard */
 .word-card {
   position: relative;
 }
 
-.cb-hint-shape {
-  position: absolute;
-  bottom: 3px;
-  right: 4px;
-  font-size: 9px;
-  line-height: 1;
-  color: #555;
-  pointer-events: none;
-}
-
-/* ResultModal 결과 그리드 — 색맹 모양 */
 .result-emoji {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.result-shape {
-  position: absolute;
-  font-size: 9px;
-  color: #1a1a1a;
-  font-weight: 900;
-  pointer-events: none;
-}
-
 .subtitle {
   font-size: 13px;
-  color: #888;
+  color: var(--color-text-muted);
   margin-top: 2px;
+}
+
+.app-version {
+  font-size: 10px;
+  opacity: 0.45;
+  margin-left: 4px;
 }
 
 /* Puzzle navigation */
@@ -140,7 +120,7 @@
   background: none;
   border: none;
   font-size: 24px;
-  color: #1a1a1a;
+  color: var(--color-text);
   cursor: pointer;
   padding: 0 6px;
   line-height: 1;
@@ -157,7 +137,7 @@
   border: none;
   font-size: 15px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
   cursor: pointer;
   padding: 4px 10px;
   border-radius: 6px;
@@ -166,7 +146,7 @@
 }
 
 .puzzle-number-btn:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-btn-secondary-bg);
 }
 
 .puzzle-number-input {
@@ -174,10 +154,12 @@
   text-align: center;
   font-size: 15px;
   font-weight: 700;
-  border: 1.5px solid #1a1a1a;
+  border: 1.5px solid var(--color-text);
   border-radius: 6px;
   padding: 3px 8px;
   outline: none;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 /* Board */
@@ -199,7 +181,7 @@
   aspect-ratio: 1 / 1;
   border: none;
   border-radius: 8px;
-  background-color: #efeff0;
+  background-color: var(--color-surface);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -215,15 +197,15 @@
   text-align: center;
   word-break: keep-all;
   line-height: 1.3;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .word-card.selected {
-  background-color: #5a594e;
+  background-color: var(--color-surface-selected);
 }
 
 .word-card.selected span {
-  color: #ffffff;
+  color: var(--color-text-on-selected);
 }
 
 .word-card.disabled {
@@ -247,7 +229,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #1a1a1a;
+  color: var(--color-text);
   opacity: 0.7;
   margin-bottom: 4px;
 }
@@ -255,7 +237,7 @@
 .solved-words {
   font-size: 15px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 /* One away hint */
@@ -277,7 +259,7 @@
 
 .lives-label {
   font-size: 13px;
-  color: #888;
+  color: var(--color-text-muted);
 }
 
 .lives-dots {
@@ -293,11 +275,11 @@
 }
 
 .lives-dot.active {
-  background-color: #1a1a1a;
+  background-color: var(--color-lives-active);
 }
 
 .lives-dot.inactive {
-  background-color: #e0e0e0;
+  background-color: var(--color-lives-inactive);
 }
 
 /* 라이브 + 타이머 행 */
@@ -311,37 +293,63 @@
 .timer {
   font-size: 13px;
   font-weight: 700;
-  color: #888;
+  color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.5px;
 }
 
-/* 랜덤 버튼 */
-.random-btn {
-  display: block;
-  margin: 4px auto 0;
-  padding: 5px 14px;
-  border-radius: 20px;
-  border: 1.5px solid #d0d0d0;
-  background: none;
-  font-size: 13px;
-  font-weight: 600;
-  color: #555;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: border-color 0.15s, color 0.15s;
+/* 데일리/랜덤 버튼 묶음 */
+.header-nav-btns {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 4px;
 }
 
-.random-btn:active {
-  border-color: #1a1a1a;
-  color: #1a1a1a;
+.nav-shortcut-btn {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1.5px solid var(--color-border);
+  background: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.nav-shortcut-btn:active {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.nav-shortcut-btn--active {
+  border-color: var(--color-text);
+  color: var(--color-text);
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* 퍼즐 번호 옆 "오늘" 배지 */
+.daily-badge {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 1px 5px;
+  border-radius: 8px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: middle;
+  line-height: 1.4;
 }
 
 /* 결과 모달 플레이 시간 */
 .modal-time {
   font-size: 20px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: var(--color-text);
   letter-spacing: 1px;
   font-variant-numeric: tabular-nums;
 }
@@ -374,13 +382,13 @@
 }
 
 .btn-secondary {
-  background-color: #f0f0f0;
-  color: #1a1a1a;
+  background-color: var(--color-btn-secondary-bg);
+  color: var(--color-text);
 }
 
 .btn-primary {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--color-text);
+  color: var(--color-bg);
   flex: 1;
 }
 
@@ -389,8 +397,8 @@
   padding: 14px;
   border-radius: 12px;
   border: none;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--color-text);
+  color: var(--color-bg);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -400,7 +408,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-modal-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -409,11 +417,14 @@
 }
 
 .modal-content {
-  background: #ffffff;
+  background: var(--color-modal-bg);
+  color: var(--color-text);
   border-radius: 20px;
   padding: 32px 24px;
   width: 100%;
   max-width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -431,7 +442,13 @@
 
 .modal-subtitle {
   font-size: 14px;
-  color: #888;
+  color: var(--color-text-muted);
+}
+
+.modal-hint-used {
+  font-size: 13px;
+  color: #f59e0b;
+  font-weight: 600;
 }
 
 .result-grid {
@@ -451,26 +468,45 @@
   font-size: 22px;
 }
 
-.share-btn {
+.share-btns {
+  display: flex;
+  gap: 8px;
   width: 100%;
-  padding: 14px;
+  margin-top: 4px;
+}
+
+.share-btn {
+  flex: 1;
+  padding: 13px 8px;
   border-radius: 12px;
   border: none;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 4px;
+}
+
+.share-btn--text {
+  background-color: var(--color-btn-secondary-bg);
+  color: var(--color-text);
+}
+
+.share-btn--image {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.share-btn--image:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .close-btn {
   width: 100%;
   padding: 12px;
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-border);
   background: transparent;
-  color: #888;
+  color: var(--color-text-muted);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -567,7 +603,7 @@
 
 .error-desc {
   font-size: 14px;
-  color: #888;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -576,8 +612,8 @@
   padding: 14px 32px;
   border-radius: 12px;
   border: none;
-  background: #1a1a1a;
-  color: #fff;
+  background: var(--color-text);
+  color: var(--color-bg);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -614,8 +650,8 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #1a1a1a;
-  color: #fff;
+  background: var(--color-text);
+  color: var(--color-bg);
   font-size: 12px;
   font-weight: 700;
   display: flex;
@@ -631,7 +667,7 @@
 
 .tutorial-step-desc {
   font-size: 13px;
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.5;
   padding-left: 30px;
 }
@@ -648,18 +684,18 @@
 }
 
 .tutorial-word {
-  background: #efeff0;
+  background: var(--color-surface);
   border-radius: 6px;
   padding: 8px 4px;
   text-align: center;
   font-size: 11px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .tutorial-word--selected {
-  background: #5a594e;
-  color: #fff;
+  background: var(--color-surface-selected);
+  color: var(--color-text-on-selected);
 }
 
 /* Step 3 — difficulty levels */
@@ -710,23 +746,23 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #e0e0e0;
+  background: var(--color-lives-inactive);
 }
 
 .tutorial-dot--active {
-  background: #1a1a1a;
+  background: var(--color-lives-active);
 }
 
 .tutorial-lives-desc {
   font-size: 13px;
-  color: #888;
+  color: var(--color-text-muted);
 }
 
 .tutorial-tip {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #fff8e7;
+  background: var(--color-tutorial-tip-bg);
   border-radius: 8px;
   padding: 10px 14px;
   width: 100%;
@@ -739,14 +775,14 @@
 
 .tutorial-tip span:last-child {
   font-size: 12px;
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.4;
 }
 
 /* Stats section in modal */
 .stats-section {
   width: 100%;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--color-border);
   padding-top: 16px;
   margin-top: 4px;
 }
@@ -767,13 +803,13 @@
 .stat-value {
   font-size: 24px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: var(--color-text);
   line-height: 1;
 }
 
 .stat-label {
   font-size: 11px;
-  color: #888;
+  color: var(--color-text-muted);
   text-align: center;
   white-space: nowrap;
 }
@@ -781,7 +817,7 @@
 .dist-title {
   font-size: 12px;
   font-weight: 700;
-  color: #888;
+  color: var(--color-text-muted);
   text-align: left;
   width: 100%;
   margin-bottom: 8px;
@@ -805,7 +841,7 @@
 .dist-label {
   font-size: 13px;
   font-weight: 700;
-  color: #555;
+  color: var(--color-text-secondary);
   width: 12px;
   text-align: center;
   flex-shrink: 0;
@@ -814,14 +850,14 @@
 .dist-bar-wrap {
   flex: 1;
   height: 20px;
-  background: #f0f0f0;
+  background: var(--color-dist-bar-bg);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .dist-bar {
   height: 100%;
-  background: #1a1a1a;
+  background: var(--color-dist-bar);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -834,5 +870,5 @@
 .dist-count {
   font-size: 11px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-bg);
 }

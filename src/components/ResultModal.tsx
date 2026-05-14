@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import type { GameStatus, Guess, Difficulty } from "../types";
 import type { Stats } from "../hooks/useStats";
 import { useBackButton } from "../hooks/useBackButton";
-import { useColorBlind, DIFFICULTY_SHAPES, DIFFICULTY_EMOJI_CB } from "../contexts/ColorBlindContext";
 import { formatTime } from "../hooks/useTimer";
+import { generateResultImage } from "../utils/generateResultImage";
 
 const DIFFICULTY_EMOJI: Record<Difficulty, string> = {
   1: "🟨",
@@ -18,13 +18,13 @@ interface Props {
   guessHistory: Guess[];
   stats: Stats;
   elapsed: number;
+  hintCount: number;
   onClose: () => void;
 }
 
-function generateShareText(puzzleNumber: number, guessHistory: Guess[], colorBlind: boolean, elapsed: number): string {
-  const emojiMap = colorBlind ? DIFFICULTY_EMOJI_CB : DIFFICULTY_EMOJI;
+function generateShareText(puzzleNumber: number, guessHistory: Guess[], elapsed: number): string {
   const rows = guessHistory
-    .map((g) => g.wordDifficulties.map((d) => emojiMap[d]).join(""))
+    .map((g) => g.wordDifficulties.map((d) => DIFFICULTY_EMOJI[d]).join(""))
     .join("\n");
   return `커넥션스 #${puzzleNumber} ⏱${formatTime(elapsed)}\n${rows}`;
 }
@@ -34,11 +34,10 @@ function winRate(stats: Stats): number {
   return Math.round((stats.totalWon / stats.totalPlayed) * 100);
 }
 
-export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed, onClose }: Props) {
-  const { isColorBlind } = useColorBlind();
-  const emojiMap = isColorBlind ? DIFFICULTY_EMOJI_CB : DIFFICULTY_EMOJI;
-  const shareText = generateShareText(puzzleNumber, guessHistory, isColorBlind, elapsed);
+export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed, hintCount, onClose }: Props) {
+  const shareText = generateShareText(puzzleNumber, guessHistory, elapsed);
   const [copied, setCopied] = useState(false);
+  const [imageSharing, setImageSharing] = useState(false);
 
   useBackButton(true, onClose);
 
@@ -68,6 +67,34 @@ export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed
     }
   };
 
+  const handleImageShare = async () => {
+    if (imageSharing) return;
+    setImageSharing(true);
+    try {
+      const blob = await generateResultImage({ puzzleNumber, guessHistory, elapsed, hintCount });
+      const file = new File([blob], `connections-${puzzleNumber}.png`, { type: "image/png" });
+
+      if (navigator.canShare?.({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file] });
+        } catch {
+          // user cancelled
+        }
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `connections-${puzzleNumber}.png`;
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    } catch {
+      // 생성 실패 무시
+    } finally {
+      setImageSharing(false);
+    }
+  };
+
   const maxDistCount = Math.max(...Object.values(stats.mistakeDistribution), 1);
 
   return (
@@ -77,17 +104,15 @@ export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed
         <h2 className="modal-title">{status === "won" ? "정답!" : "아쉬워요"}</h2>
         <p className="modal-subtitle">커넥션스 #{puzzleNumber}</p>
         <p className="modal-time">⏱ {formatTime(elapsed)}</p>
+        {hintCount > 0 && (
+          <p className="modal-hint-used">💡 힌트 {hintCount}회 사용</p>
+        )}
 
         <div className="result-grid">
           {guessHistory.map((guess, i) => (
             <div key={i} className="result-row">
               {guess.wordDifficulties.map((d, j) => (
-                <span key={j} className="result-emoji">
-                  {emojiMap[d]}
-                  {isColorBlind && (
-                    <span className="result-shape">{DIFFICULTY_SHAPES[d]}</span>
-                  )}
-                </span>
+                <span key={j} className="result-emoji">{DIFFICULTY_EMOJI[d]}</span>
               ))}
             </div>
           ))}
@@ -132,9 +157,14 @@ export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed
           </div>
         </div>
 
-        <button className="share-btn" onClick={handleShare}>
-          {copied ? "복사됐어요! ✓" : "결과 공유하기"}
-        </button>
+        <div className="share-btns">
+          <button className="share-btn share-btn--text" onClick={handleShare}>
+            {copied ? "복사됐어요! ✓" : "텍스트 공유"}
+          </button>
+          <button className="share-btn share-btn--image" onClick={handleImageShare} disabled={imageSharing}>
+            {imageSharing ? "생성 중…" : "이미지 공유"}
+          </button>
+        </div>
         <button className="close-btn" onClick={onClose}>
           닫기
         </button>

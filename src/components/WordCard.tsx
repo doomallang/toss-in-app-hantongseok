@@ -1,5 +1,3 @@
-import { useColorBlind } from "../contexts/ColorBlindContext";
-
 interface Props {
   word: string;
   selected: boolean;
@@ -7,21 +5,10 @@ interface Props {
   solving?: boolean;
   solvingColor?: string;
   hintColor?: string;
-  hintShape?: string;
   onClick: () => void;
 }
 
-export function WordCard({
-  word,
-  selected,
-  disabled,
-  solving,
-  solvingColor,
-  hintColor,
-  hintShape,
-  onClick,
-}: Props) {
-  const { isColorBlind } = useColorBlind();
+export function WordCard({ word, selected, disabled, solving, solvingColor, hintColor, onClick }: Props) {
   const style: React.CSSProperties = {};
 
   if (solving && solvingColor) {
@@ -46,11 +33,6 @@ export function WordCard({
       disabled={disabled}
     >
       <span>{word}</span>
-      {isColorBlind && hintShape && !solving && (
-        <span className="cb-hint-shape" aria-hidden="true">
-          {hintShape}
-        </span>
-      )}
     </button>
   );
 }

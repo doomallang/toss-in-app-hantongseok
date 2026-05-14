@@ -1,21 +1,26 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { GameBoard } from "./components/GameBoard";
-import { TutorialModal, isTutorialSeen } from "./components/TutorialModal";
+import { isTutorialSeen, TutorialModal } from "./components/TutorialModal";
 import { usePuzzles } from "./hooks/usePuzzles";
-import { useColorBlind } from "./contexts/ColorBlindContext";
 import { useAdMob } from "./hooks/useAdMob";
+import { useDarkMode } from "./hooks/useDarkMode";
+import { getDailyIndex } from "./utils/daily";
 import "./App.css";
 
 export default function App() {
   const { puzzles, loading } = usePuzzles();
   const MAX_DAY = puzzles.length - 1;
 
-  const [currentDay, setCurrentDay] = useState(() => Math.floor(Math.random() * puzzles.length));
+  const dailyIndex = useMemo(() => getDailyIndex(puzzles.length), [puzzles.length]);
+
+  const [currentDay, setCurrentDay] = useState(() => getDailyIndex(puzzles.length));
   const [editingNumber, setEditingNumber] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showTutorial, setShowTutorial] = useState(() => !isTutorialSeen());
-  const { isColorBlind, toggle: toggleColorBlind } = useColorBlind();
+  const { isDark, toggle: toggleDark } = useDarkMode();
   const { isNative } = useAdMob();
+
+  const isDaily = currentDay === dailyIndex;
 
   const puzzle = useMemo(() => {
     const idx = ((currentDay % puzzles.length) + puzzles.length) % puzzles.length;
@@ -27,6 +32,10 @@ export default function App() {
 
   const goToDay = (day: number) => {
     setCurrentDay(Math.max(0, Math.min(day, MAX_DAY)));
+  };
+
+  const goToDaily = () => {
+    setCurrentDay(dailyIndex);
   };
 
   const goToRandom = () => {
@@ -54,11 +63,11 @@ export default function App() {
           <h1 className="title">커넥션스</h1>
           <div className="header-actions">
             <button
-              className={`cb-toggle-btn${isColorBlind ? " cb-toggle-btn--on" : ""}`}
-              onClick={toggleColorBlind}
-              aria-label={isColorBlind ? "색맹 모드 끄기" : "색맹 모드 켜기"}
-              aria-pressed={isColorBlind}
-              title="색맹 모드"
+              className={`cb-toggle-btn${isDark ? " cb-toggle-btn--on" : ""}`}
+              onClick={toggleDark}
+              aria-label={isDark ? "라이트 모드로 전환" : "다크 모드로 전환"}
+              aria-pressed={isDark}
+              title={isDark ? "라이트 모드" : "다크 모드"}
             >
               ◑
             </button>
@@ -86,18 +95,29 @@ export default function App() {
           ) : (
             <button className="puzzle-number-btn" onClick={handleNumberClick}>
               #{puzzleNumber}
+              {isDaily && <span className="daily-badge">오늘</span>}
             </button>
           )}
           <button className="nav-btn" onClick={() => goToDay(currentDay + 1)} disabled={currentDay >= MAX_DAY}>
             ›
           </button>
         </div>
-        <button className="random-btn" onClick={goToRandom}>
-          🎲 랜덤 문제
-        </button>
+        <div className="header-nav-btns">
+          <button
+            className={`nav-shortcut-btn${isDaily ? " nav-shortcut-btn--active" : ""}`}
+            onClick={goToDaily}
+            disabled={isDaily}
+          >
+            📅 오늘의 문제
+          </button>
+          <button className="nav-shortcut-btn" onClick={goToRandom}>
+            🎲 랜덤 문제
+          </button>
+        </div>
         <p className="subtitle">
           공통점 있는 단어를 4개씩 묶어보세요
           {loading && <span className="loading-dot"> ·</span>}
+          <span className="app-version"> v{__APP_VERSION__}</span>
         </p>
       </header>
 
