@@ -1,10 +1,12 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { GameBoard } from "./components/GameBoard";
 import { isTutorialSeen, TutorialModal } from "./components/TutorialModal";
 import { usePuzzles } from "./hooks/usePuzzles";
+import { useStats } from "./hooks/useStats";
 import { useAdMob } from "./hooks/useAdMob";
 import { useDarkMode } from "./hooks/useDarkMode";
-import { getDailyIndex } from "./utils/daily";
+import { getDailyIndex, msUntilNextDaily, formatCountdown } from "./utils/daily";
+import { useColorBlind } from "./hooks/useColorBlind";
 import "./App.css";
 
 export default function App() {
@@ -18,9 +20,21 @@ export default function App() {
   const [inputValue, setInputValue] = useState("");
   const [showTutorial, setShowTutorial] = useState(() => !isTutorialSeen());
   const { isDark, toggle: toggleDark } = useDarkMode();
+  const { enabled: isColorBlind, toggle: toggleColorBlind } = useColorBlind();
   const { isNative } = useAdMob();
+  const { stats, recordResult, exportStats, importStats } = useStats();
 
   const isDaily = currentDay === dailyIndex;
+
+  const [countdown, setCountdown] = useState(() => formatCountdown(msUntilNextDaily()));
+  useEffect(() => {
+    const id = setInterval(() => setCountdown(formatCountdown(msUntilNextDaily())), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const isWon = stats.wonPuzzleIds?.includes(currentDay) ?? false;
+  const isCompleted = stats.completedPuzzleIds.includes(currentDay);
+  const isLost = isCompleted && !isWon;
 
   const puzzle = useMemo(() => {
     const idx = ((currentDay % puzzles.length) + puzzles.length) % puzzles.length;
@@ -40,9 +54,11 @@ export default function App() {
 
   const goToRandom = () => {
     if (puzzles.length <= 1) return;
-    let next: number;
-    do { next = Math.floor(Math.random() * puzzles.length); } while (next === currentDay);
-    setCurrentDay(next);
+    const incomplete = Array.from({ length: puzzles.length }, (_, i) => i).filter(
+      (i) => i !== currentDay && !stats.completedPuzzleIds.includes(i),
+    );
+    const pool = incomplete.length > 0 ? incomplete : Array.from({ length: puzzles.length }, (_, i) => i).filter((i) => i !== currentDay);
+    setCurrentDay(pool[Math.floor(Math.random() * pool.length)]);
   };
 
   const handleNumberClick = () => {
@@ -63,7 +79,16 @@ export default function App() {
           <h1 className="title">커넥션스</h1>
           <div className="header-actions">
             <button
-              className={`cb-toggle-btn${isDark ? " cb-toggle-btn--on" : ""}`}
+              className={`cb-mode-btn${isColorBlind ? " cb-mode-btn--on" : ""}`}
+              onClick={toggleColorBlind}
+              aria-label={isColorBlind ? "색맹 모드 끄기" : "색맹 모드 켜기"}
+              aria-pressed={isColorBlind}
+              title="색맹 모드"
+            >
+              ◈
+            </button>
+            <button
+              className={`dark-toggle-btn${isDark ? " dark-toggle-btn--on" : ""}`}
               onClick={toggleDark}
               aria-label={isDark ? "라이트 모드로 전환" : "다크 모드로 전환"}
               aria-pressed={isDark}
@@ -83,6 +108,9 @@ export default function App() {
           {editingNumber ? (
             <input
               className="puzzle-number-input"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onBlur={handleNumberSubmit}
@@ -96,6 +124,8 @@ export default function App() {
             <button className="puzzle-number-btn" onClick={handleNumberClick}>
               #{puzzleNumber}
               {isDaily && <span className="daily-badge">오늘</span>}
+              {isWon && <span className="result-badge result-badge--won">✓</span>}
+              {isLost && <span className="result-badge result-badge--lost">✗</span>}
             </button>
           )}
           <button className="nav-btn" onClick={() => goToDay(currentDay + 1)} disabled={currentDay >= MAX_DAY}>
@@ -118,10 +148,22 @@ export default function App() {
           공통점 있는 단어를 4개씩 묶어보세요
           {loading && <span className="loading-dot"> ·</span>}
           <span className="app-version"> v{__APP_VERSION__}</span>
+          <span className="completion-rate"> · {stats.completedPuzzleIds.length}/{puzzles.length} 완료</span>
         </p>
+        {isDaily && isCompleted && (
+          <p className="next-daily-countdown">다음 문제까지 {countdown}</p>
+        )}
       </header>
 
-      <GameBoard key={currentDay} puzzle={puzzle} puzzleNumber={puzzleNumber} />
+      <GameBoard
+        key={currentDay}
+        puzzle={puzzle}
+        puzzleNumber={puzzleNumber}
+        stats={stats}
+        recordResult={recordResult}
+        exportStats={exportStats}
+        importStats={importStats}
+      />
 
       {showTutorial && <TutorialModal onClose={() => setShowTutorial(false)} />}
     </div>

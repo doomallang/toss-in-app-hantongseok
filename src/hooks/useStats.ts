@@ -5,8 +5,9 @@ export interface Stats {
   totalWon: number;
   currentStreak: number;
   maxStreak: number;
-  mistakeDistribution: Record<number, number>; // 0~4 wrong guesses
+  mistakeDistribution: Record<number, number>;
   completedPuzzleIds: number[];
+  wonPuzzleIds: number[];
   totalHintsUsed: number;
 }
 
@@ -19,6 +20,7 @@ const DEFAULT_STATS: Stats = {
   maxStreak: 0,
   mistakeDistribution: { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 },
   completedPuzzleIds: [],
+  wonPuzzleIds: [],
   totalHintsUsed: 0,
 };
 
@@ -49,6 +51,7 @@ export function useStats() {
           totalPlayed: prev.totalPlayed + 1,
           totalWon: won ? prev.totalWon + 1 : prev.totalWon,
           completedPuzzleIds: [...prev.completedPuzzleIds.slice(-99), puzzleId],
+          wonPuzzleIds: won ? [...prev.wonPuzzleIds.slice(-99), puzzleId] : prev.wonPuzzleIds,
           mistakeDistribution: won
             ? { ...prev.mistakeDistribution, [mistakeCount]: (prev.mistakeDistribution[mistakeCount] ?? 0) + 1 }
             : prev.mistakeDistribution,
@@ -64,5 +67,20 @@ export function useStats() {
     [],
   );
 
-  return { stats, recordResult };
+  const exportStats = useCallback(() => {
+    return JSON.stringify(stats);
+  }, [stats]);
+
+  const importStats = useCallback((json: string): boolean => {
+    try {
+      const parsed = { ...DEFAULT_STATS, ...JSON.parse(json) } as Stats;
+      saveStats(parsed);
+      setStats(parsed);
+      return true;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  return { stats, recordResult, exportStats, importStats };
 }

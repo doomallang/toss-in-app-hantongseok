@@ -1,0 +1,25 @@
+{
+  "name": "커넥션스",
+  "short_name": "커넥션스",
+  "description": "공통점 있는 단어를 4개씩 묶는 데일리 퍼즐 게임",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

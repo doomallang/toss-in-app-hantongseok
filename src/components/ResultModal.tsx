@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import type { GameStatus, Guess, Difficulty } from "../types";
+import type { GameStatus, Guess, Difficulty, Group } from "../types";
 import type { Stats } from "../hooks/useStats";
 import { useBackButton } from "../hooks/useBackButton";
 import { formatTime } from "../hooks/useTimer";
 import { generateResultImage } from "../utils/generateResultImage";
+import { DIFFICULTY_COLORS } from "../constants";
 
 const DIFFICULTY_EMOJI: Record<Difficulty, string> = {
   1: "🟨",
@@ -16,9 +17,12 @@ interface Props {
   status: GameStatus;
   puzzleNumber: number;
   guessHistory: Guess[];
+  solvedGroups: Group[];
   stats: Stats;
   elapsed: number;
   hintCount: number;
+  exportStats: () => string;
+  importStats: (json: string) => boolean;
   onClose: () => void;
 }
 
@@ -34,10 +38,12 @@ function winRate(stats: Stats): number {
   return Math.round((stats.totalWon / stats.totalPlayed) * 100);
 }
 
-export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed, hintCount, onClose }: Props) {
+export function ResultModal({ status, puzzleNumber, guessHistory, solvedGroups, stats, elapsed, hintCount, exportStats, importStats, onClose }: Props) {
   const shareText = generateShareText(puzzleNumber, guessHistory, elapsed);
   const [copied, setCopied] = useState(false);
   const [imageSharing, setImageSharing] = useState(false);
+  const [showDataMenu, setShowDataMenu] = useState(false);
+  const [importMsg, setImportMsg] = useState<string | null>(null);
 
   useBackButton(true, onClose);
 
@@ -118,6 +124,24 @@ export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed
           ))}
         </div>
 
+        {solvedGroups.length > 0 && (
+          <div className="result-categories">
+            {[1, 2, 3, 4].map((d) => {
+              const group = solvedGroups.find((g) => g.difficulty === d as Difficulty);
+              if (!group) return null;
+              return (
+                <div
+                  key={d}
+                  className="result-category-row"
+                  style={{ backgroundColor: DIFFICULTY_COLORS[d as Difficulty] }}
+                >
+                  <span className="result-category-name">{group.category}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
         <div className="stats-section">
           <div className="stats-row">
             <div className="stat-item">
@@ -130,11 +154,11 @@ export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed
             </div>
             <div className="stat-item">
               <span className="stat-value">{stats.currentStreak}</span>
-              <span className="stat-label">연속 클리어</span>
+              <span className="stat-label">연승</span>
             </div>
             <div className="stat-item">
               <span className="stat-value">{stats.maxStreak}</span>
-              <span className="stat-label">최대 연속</span>
+              <span className="stat-label">최대 연승</span>
             </div>
           </div>
 
@@ -164,6 +188,47 @@ export function ResultModal({ status, puzzleNumber, guessHistory, stats, elapsed
           <button className="share-btn share-btn--image" onClick={handleImageShare} disabled={imageSharing}>
             {imageSharing ? "생성 중…" : "이미지 공유"}
           </button>
+        </div>
+        <div className="data-menu-wrap">
+          <button className="data-menu-toggle" onClick={() => setShowDataMenu((v) => !v)}>
+            통계 백업 {showDataMenu ? "▲" : "▼"}
+          </button>
+          {showDataMenu && (
+            <div className="data-menu">
+              <button
+                className="data-btn"
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(exportStats());
+                    setImportMsg("클립보드에 복사됐어요 ✓");
+                    setTimeout(() => setImportMsg(null), 2500);
+                  } catch {
+                    setImportMsg("복사 실패");
+                    setTimeout(() => setImportMsg(null), 2000);
+                  }
+                }}
+              >
+                내보내기 (복사)
+              </button>
+              <button
+                className="data-btn"
+                onClick={async () => {
+                  try {
+                    const text = await navigator.clipboard.readText();
+                    const ok = importStats(text);
+                    setImportMsg(ok ? "통계를 불러왔어요 ✓" : "올바른 데이터가 아니에요");
+                    setTimeout(() => setImportMsg(null), 2500);
+                  } catch {
+                    setImportMsg("클립보드 접근 실패");
+                    setTimeout(() => setImportMsg(null), 2000);
+                  }
+                }}
+              >
+                가져오기 (붙여넣기)
+              </button>
+              {importMsg && <p className="data-msg">{importMsg}</p>}
+            </div>
+          )}
         </div>
         <button className="close-btn" onClick={onClose}>
           닫기

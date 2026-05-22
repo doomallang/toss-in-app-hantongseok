@@ -5,64 +5,77 @@
 }
 
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #efeff0;
-  --color-surface-selected: #5a594e;
-  --color-border: #e5e5e5;
+  --color-bg: #f5f4f0;
+  --color-surface: #e8e7e2;
+  --color-surface-selected: #4a4940;
+  --color-border: #dddbd5;
   --color-text: #1a1a1a;
   --color-text-muted: #888;
   --color-text-secondary: #555;
   --color-text-on-selected: #ffffff;
-  --color-btn-secondary-bg: #f0f0f0;
-  --color-modal-bg: #ffffff;
-  --color-modal-overlay: rgba(0, 0, 0, 0.5);
-  --color-dist-bar-bg: #f0f0f0;
+  --color-btn-secondary-bg: #e2e1dc;
+  --color-modal-bg: #faf9f6;
+  --color-modal-overlay: rgba(0, 0, 0, 0.55);
+  --color-dist-bar-bg: #e2e1dc;
   --color-dist-bar: #1a1a1a;
   --color-lives-active: #1a1a1a;
-  --color-lives-inactive: #e0e0e0;
+  --color-lives-inactive: #d0cfc8;
   --color-tutorial-tip-bg: #fff8e7;
+  --shadow-card: 0 2px 6px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.07);
+  --shadow-card-selected: 0 4px 12px rgba(0,0,0,0.18), 0 2px 4px rgba(0,0,0,0.10);
+  --shadow-solved: 0 3px 8px rgba(0,0,0,0.13), 0 1px 3px rgba(0,0,0,0.08);
+  --color-one-away: #d4622a;
+  --color-badge-success: #22c55e;
 }
 
-/* 시스템 다크모드 (사용자가 명시적으로 라이트를 선택하지 않은 경우) */
+/* 시스템 다크모드 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --color-bg: #121212;
-    --color-surface: #2a2a2a;
+    --color-bg: #18181b;
+    --color-surface: #2c2c30;
     --color-surface-selected: #d4d3c6;
-    --color-border: #2e2e2e;
+    --color-border: #303035;
     --color-text: #f0f0f0;
     --color-text-muted: #777;
     --color-text-secondary: #aaa;
     --color-text-on-selected: #1a1a1a;
-    --color-btn-secondary-bg: #2a2a2a;
-    --color-modal-bg: #1e1e1e;
+    --color-btn-secondary-bg: #2c2c30;
+    --color-modal-bg: #222226;
     --color-modal-overlay: rgba(0, 0, 0, 0.7);
-    --color-dist-bar-bg: #2a2a2a;
+    --color-dist-bar-bg: #2c2c30;
     --color-dist-bar: #f0f0f0;
     --color-lives-active: #f0f0f0;
-    --color-lives-inactive: #333;
+    --color-lives-inactive: #3a3a3e;
     --color-tutorial-tip-bg: #2a2200;
+    --shadow-card: 0 2px 6px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.25);
+    --shadow-card-selected: 0 4px 14px rgba(0,0,0,0.50), 0 2px 4px rgba(0,0,0,0.30);
+    --shadow-solved: 0 3px 8px rgba(0,0,0,0.40), 0 1px 3px rgba(0,0,0,0.25);
+    --color-one-away: #f0845a;
   }
 }
 
 /* 사용자가 명시적으로 다크모드 선택 */
 [data-theme="dark"] {
-  --color-bg: #121212;
-  --color-surface: #2a2a2a;
+  --color-bg: #18181b;
+  --color-surface: #2c2c30;
   --color-surface-selected: #d4d3c6;
-  --color-border: #2e2e2e;
+  --color-border: #303035;
   --color-text: #f0f0f0;
   --color-text-muted: #777;
   --color-text-secondary: #aaa;
   --color-text-on-selected: #1a1a1a;
-  --color-btn-secondary-bg: #2a2a2a;
-  --color-modal-bg: #1e1e1e;
+  --color-btn-secondary-bg: #2c2c30;
+  --color-modal-bg: #222226;
   --color-modal-overlay: rgba(0, 0, 0, 0.7);
-  --color-dist-bar-bg: #2a2a2a;
+  --color-dist-bar-bg: #2c2c30;
   --color-dist-bar: #f0f0f0;
   --color-lives-active: #f0f0f0;
-  --color-lives-inactive: #333;
+  --color-lives-inactive: #3a3a3e;
   --color-tutorial-tip-bg: #2a2200;
+  --shadow-card: 0 2px 6px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.25);
+  --shadow-card-selected: 0 4px 14px rgba(0,0,0,0.50), 0 2px 4px rgba(0,0,0,0.30);
+  --shadow-solved: 0 3px 8px rgba(0,0,0,0.40), 0 1px 3px rgba(0,0,0,0.25);
+  --color-one-away: #f0845a;
 }
 
 body {
@@ -70,7 +83,6 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
-  /* 노치/홈인디케이터 영역 침범 방지 */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);

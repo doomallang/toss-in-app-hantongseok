@@ -1,12 +1,6 @@
-import type { Guess, Difficulty } from "../types";
+import type { Guess } from "../types";
 import { formatTime } from "../hooks/useTimer";
-
-const DIFF_COLORS: Record<Difficulty, string> = {
-  1: "#f9df6d",
-  2: "#a0c35a",
-  3: "#b0c4ef",
-  4: "#ba81c5",
-};
+import { DIFFICULTY_COLORS as DIFF_COLORS } from "../constants";
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif";
 
