@@ -22,7 +22,29 @@
       "Bash(keytool *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(gh run *)",
+      "Bash(brew install *)",
+      "Bash(gh auth *)",
+      "Bash(security find-generic-password *)",
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('pillow ok'\\)\")",
+      "Bash(python3 -c \"import cairosvg; print\\('cairosvg ok'\\)\")",
+      "Bash(python3 -)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5199/)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(pkill -f \"vite --port 5199\")",
+      "Bash(./gradlew bundleRelease)",
+      "Bash(/usr/libexec/java_home *)",
+      "Read(//Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/**)",
+      "Bash(\"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java\" -version)",
+      "Bash(git *)",
+      "Bash(xargs cat)",
+      "Bash(pnpm run *)"
     ]
   }
 }
