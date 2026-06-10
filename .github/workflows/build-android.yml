@@ -42,25 +42,34 @@ jobs:
       - name: Android SDK 설정
         uses: android-actions/setup-android@v3
 
+      - name: local.properties 생성
+        run: echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+
       - name: AAB 빌드
         run: |
           cd android
           chmod +x gradlew
           ./gradlew bundleRelease
 
+      - name: 키스토어 복원
+        run: |
+          echo "${{ secrets.SIGNING_KEY_BASE64 }}" | base64 --decode > android/app/release.keystore
+
       - name: AAB 서명
-        uses: r0adkll/sign-android-release@v1
-        id: sign
-        with:
-          releaseDirectory: android/app/build/outputs/bundle/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY_BASE64 }}
-          alias: ${{ secrets.SIGNING_KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.SIGNING_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        run: |
+          jarsigner \
+            -verbose \
+            -sigalg SHA256withRSA \
+            -digestalg SHA-256 \
+            -keystore android/app/release.keystore \
+            -storepass "${{ secrets.SIGNING_STORE_PASSWORD }}" \
+            -keypass "${{ secrets.SIGNING_KEY_PASSWORD }}" \
+            android/app/build/outputs/bundle/release/app-release.aab \
+            "${{ secrets.SIGNING_KEY_ALIAS }}"
 
       - name: AAB 업로드 (아티팩트)
         uses: actions/upload-artifact@v4
         with:
           name: hantongseok-release-${{ github.run_number }}
-          path: ${{ steps.sign.outputs.signedReleaseFile }}
+          path: android/app/build/outputs/bundle/release/app-release.aab
           retention-days: 30
