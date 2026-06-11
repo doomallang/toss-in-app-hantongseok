@@ -21,7 +21,7 @@ export default function App() {
   const [showTutorial, setShowTutorial] = useState(() => !isTutorialSeen());
   const { isDark, toggle: toggleDark } = useDarkMode();
   const { enabled: isColorBlind, toggle: toggleColorBlind } = useColorBlind();
-  const { isNative } = useAdMob();
+  const { isNative, bannerHeight } = useAdMob();
   const { stats, recordResult, exportStats, importStats } = useStats();
 
   const isDaily = currentDay === dailyIndex;
@@ -72,8 +72,12 @@ export default function App() {
     setEditingNumber(false);
   };
 
+  const nativeStyle = isNative
+    ? ({ "--banner-height": `${bannerHeight}px` } as React.CSSProperties)
+    : undefined;
+
   return (
-    <div className={`app${isNative ? " app--native" : ""}`}>
+    <div className={`app${isNative ? " app--native" : ""}`} style={nativeStyle}>
       <header className="header">
         <div className="header-top">
           <h1 className="title">커넥션스</h1>

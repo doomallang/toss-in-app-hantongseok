@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const BANNER_AD_ID = "ca-app-pub-6320975448857378/7023678736";
 
@@ -7,6 +7,8 @@ function isNative(): boolean {
 }
 
 export function useAdMob() {
+  const [bannerHeight, setBannerHeight] = useState(0);
+
   useEffect(() => {
     if (!isNative()) return;
 
@@ -19,6 +21,10 @@ export function useAdMob() {
         await AdMob.initialize({ testingDevices: [] });
 
         if (!mounted) return;
+
+        AdMob.addListener("bannerAdSizeChanged", (info: { height: number }) => {
+          if (mounted) setBannerHeight(info.height);
+        });
 
         await AdMob.showBanner({
           adId: BANNER_AD_ID,
@@ -37,10 +43,13 @@ export function useAdMob() {
       mounted = false;
       if (!isNative()) return;
       import("@capacitor-community/admob")
-        .then(({ AdMob }) => AdMob.removeBanner())
+        .then(({ AdMob }) => {
+          AdMob.removeAllListeners();
+          AdMob.removeBanner();
+        })
         .catch(() => {});
     };
   }, []);
 
-  return { isNative: isNative() };
+  return { isNative: isNative(), bannerHeight };
 }

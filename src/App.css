@@ -2,15 +2,19 @@
   max-width: 480px;
   margin: 0 auto;
   padding: 20px 16px calc(40px + env(safe-area-inset-bottom));
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* 네이티브 앱: AdMob 배너(~60px) + safe area 만큼 하단 여백 */
+/* 네이티브 앱: 배너 실제 높이만큼 영역을 제외하고 화면에 꽉 채움 */
 .app--native {
-  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  --banner-height: 0px;
+  height: calc(100dvh - var(--banner-height));
+  min-height: unset;
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow-y: auto;
 }
 
 /* Header */
