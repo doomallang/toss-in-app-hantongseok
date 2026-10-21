@@ -41,6 +41,8 @@ jobs:
 
       - name: Android SDK 설정
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       - name: local.properties 생성
         run: echo "sdk.dir=$ANDROID_HOME" > android/local.properties
