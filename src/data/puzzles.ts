@@ -1091,6 +1091,96 @@ export const puzzles: Puzzle[] = [
       { category: "등산 안전 장비", words: ["등산화", "스틱", "헤드랜턴", "구급낭"], difficulty: 4 },
     ],
   },
+  {
+    id: 120,
+    groups: [
+      { category: "한국의 궁궐", words: ["경복궁", "창덕궁", "덕수궁", "창경궁"], difficulty: 1 },
+      { category: "세계의 고대 문명", words: ["이집트", "메소포타미아", "인더스", "황허"], difficulty: 2 },
+      { category: "르네상스 화가", words: ["레오나르도다빈치", "미켈란젤로", "라파엘로", "보티첼리"], difficulty: 3 },
+      { category: "인상주의 화가", words: ["모네", "르누아르", "드가", "피사로"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 121,
+    groups: [
+      { category: "편의점에서 살 수 있는 음료", words: ["생수", "커피", "탄산음료", "이온음료"], difficulty: 1 },
+      { category: "카페 메뉴", words: ["아메리카노", "카페라테", "카푸치노", "에스프레소"], difficulty: 2 },
+      { category: "차의 종류", words: ["녹차", "홍차", "우롱차", "보이차"], difficulty: 3 },
+      { category: "칵테일 베이스 술", words: ["럼", "진", "보드카", "데킬라"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 122,
+    groups: [
+      { category: "집 안의 거실 가구", words: ["소파", "탁자", "TV장", "책장"], difficulty: 1 },
+      { category: "침실 침구류", words: ["이불", "베개", "매트리스", "담요"], difficulty: 2 },
+      { category: "욕실 용품", words: ["샴푸", "비누", "수건", "칫솔"], difficulty: 3 },
+      { category: "세탁 표시 기호", words: ["물세탁", "표백", "건조", "다림질"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 123,
+    groups: [
+      { category: "육상 경기 종목", words: ["달리기", "높이뛰기", "멀리뛰기", "창던지기"], difficulty: 1 },
+      { category: "수영 영법", words: ["자유형", "배영", "평영", "접영"], difficulty: 2 },
+      { category: "체조 종목", words: ["마루운동", "안마", "링", "철봉"], difficulty: 3 },
+      { category: "펜싱 공격 동작", words: ["플레슈", "팡트", "앙가르드", "리포스트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 124,
+    groups: [
+      { category: "컴퓨터 입력 장치", words: ["키보드", "마우스", "마이크", "웹캠"], difficulty: 1 },
+      { category: "인터넷 연결 장비", words: ["공유기", "모뎀", "허브", "중계기"], difficulty: 2 },
+      { category: "프로그래밍 언어", words: ["파이썬", "자바", "루비", "코틀린"], difficulty: 3 },
+      { category: "소프트웨어 버전 관리 용어", words: ["커밋", "브랜치", "머지", "리베이스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 125,
+    groups: [
+      { category: "서울의 한강 다리", words: ["반포대교", "마포대교", "잠실대교", "성수대교"], difficulty: 1 },
+      { category: "부산의 관광 명소", words: ["해운대", "광안리", "감천문화마을", "태종대"], difficulty: 2 },
+      { category: "제주의 자연 명소", words: ["성산일출봉", "만장굴", "주상절리", "한라산"], difficulty: 3 },
+      { category: "전주의 전통 명소", words: ["전주한옥마을", "경기전", "전동성당", "오목대"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 126,
+    groups: [
+      { category: "하늘에서 볼 수 있는 것", words: ["구름", "해", "달", "별"], difficulty: 1 },
+      { category: "기상 현상", words: ["번개", "천둥", "무지개", "안개"], difficulty: 2 },
+      { category: "태양계 행성", words: ["수성", "금성", "화성", "목성"], difficulty: 3 },
+      { category: "우주 탐사 장비", words: ["로버", "우주망원경", "착륙선", "탐사선"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 127,
+    groups: [
+      { category: "학교에서 쓰는 시험 유형", words: ["객관식", "주관식", "서술형", "논술형"], difficulty: 1 },
+      { category: "글의 구성 요소", words: ["제목", "문단", "문장", "어휘"], difficulty: 2 },
+      { category: "문학 장르", words: ["소설", "시", "희곡", "수필"], difficulty: 3 },
+      { category: "수사법", words: ["은유법", "직유법", "반어법", "의인법"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 128,
+    groups: [
+      { category: "겨울철 간식", words: ["호떡", "붕어빵", "군고구마", "어묵"], difficulty: 1 },
+      { category: "야시장 음식", words: ["닭꼬치", "타코야키", "핫도그", "회오리감자"], difficulty: 2 },
+      { category: "발효 식품", words: ["김치", "된장", "고추장", "청국장"], difficulty: 3 },
+      { category: "세계의 치즈", words: ["모차렐라", "체더", "브리", "고르곤졸라"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 129,
+    groups: [
+      { category: "아침에 하는 일", words: ["세수", "양치", "식사", "출근"], difficulty: 1 },
+      { category: "주말 여가 활동", words: ["독서", "등산", "영화감상", "쇼핑"], difficulty: 2 },
+      { category: "생일 파티 준비물", words: ["케이크", "초", "풍선", "선물"], difficulty: 3 },
+      { category: "이사할 때 필요한 것", words: ["상자", "테이프", "완충재", "사다리차"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
