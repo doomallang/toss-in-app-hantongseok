@@ -44,7 +44,28 @@
       "Bash(\"/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java\" -version)",
       "Bash(git *)",
       "Bash(xargs cat)",
-      "Bash(pnpm run *)"
+      "Bash(pnpm run *)",
+      "Bash(pnpm cap:build *)",
+      "Skill(run)",
+      "Bash(npx playwright *)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from playwright.sync_api import sync_playwright; print\\('ok'\\)\")",
+      "Bash(NODE_PATH=/Users/aton/project/lib/node_modules node -e \"const { chromium } = require\\('playwright'\\); console.log\\(typeof chromium\\);\")",
+      "Bash(NODE_PATH=/Users/aton/project/lib/node_modules node *)",
+      "Bash(pkill -f \"granite dev\")",
+      "Bash(pkill -f \"vite\")",
+      "Skill(claude-api)",
+      "Bash(tsx *)",
+      "Bash(node_modules/.bin/tsx -e \"import { puzzles } from './src/data/puzzles.ts'; const cats = new Set\\(puzzles.flatMap\\(p => p.groups.map\\(g => g.category\\)\\)\\); console.log\\('퍼즐:', puzzles.length, '카테고리:', cats.size, '다음 ID:', Math.max\\(...puzzles.map\\(p => p.id\\)\\) + 1\\);\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:v for k,v in d.get\\('devDependencies',{}\\).items\\(\\) if 'tsx' in k.lower\\(\\)}\\)\\)\")",
+      "Read(//Users/aton/**)",
+      "Bash(npm ls *)",
+      "Bash(node_modules/.bin/tsx --version)",
+      "Bash(node_modules/.bin/tsx -e ' *)",
+      "Bash(env)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('apiKey','없음'\\)[:20] + '...' if d.get\\('apiKey'\\) else '없음'\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); k=str\\(d\\)[:100]; print\\(k\\)\")",
+      "Bash(node_modules/.bin/tsx *)"
     ]
   }
 }

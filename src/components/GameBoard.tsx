@@ -29,6 +29,7 @@ export function GameBoard({ puzzle, puzzleNumber, stats, recordResult, exportSta
   const [showResult, setShowResult] = useState(status !== "playing");
   const [shaking, setShaking] = useState(false);
   const [hintWords, setHintWords] = useState<Map<string, string>>(new Map());
+  const [hintCount, setHintCount] = useState(0);
   const [solvingWords, setSolvingWords] = useState<{ words: string[]; color: string } | null>(null);
   const [newGroup, setNewGroup] = useState<Group | null>(null);
   const [toasts, setToasts] = useState<{ id: number; message: string }[]>([]);
@@ -68,13 +69,12 @@ export function GameBoard({ puzzle, puzzleNumber, stats, recordResult, exportSta
     if (!resultRecordedRef.current) {
       resultRecordedRef.current = true;
       const mistakes = MAX_LIVES - lives;
-      const hints = hintWords.size;
-      recordResult(puzzle.id, status === "won", mistakes, hints);
+      recordResult(puzzle.id, status === "won", mistakes, hintCount);
 
       if (status === "won") {
-        if (mistakes === 0 && hints === 0) addToast("완벽 클리어!");
+        if (mistakes === 0 && hintCount === 0) addToast("완벽 클리어!");
         else if (mistakes === 0) addToast("실수 없이 클리어!");
-        else if (hints === 0) addToast("힌트 없이 클리어!");
+        else if (hintCount === 0) addToast("힌트 없이 클리어!");
 
         const prevStreak = stats.currentStreak;
         if (prevStreak + 1 > stats.maxStreak && prevStreak + 1 >= 3) {
@@ -84,7 +84,7 @@ export function GameBoard({ puzzle, puzzleNumber, stats, recordResult, exportSta
     }
     const timer = setTimeout(() => setShowResult(true), status === "won" ? 1200 : 300);
     return () => clearTimeout(timer);
-  }, [status, lives, puzzle.id, recordResult, hintWords.size, addToast, stats]);
+  }, [status, lives, puzzle.id, recordResult, hintCount, addToast, stats]);
 
   // 틀렸을 때 흔들기
   useEffect(() => {
@@ -102,14 +102,27 @@ export function GameBoard({ puzzle, puzzleNumber, stats, recordResult, exportSta
   }, [shaking]);
 
   const handleHint = useCallback(() => {
-    if (hintWords.size >= MAX_HINTS) return;
-    const candidates = shuffledWords.filter((w) => !hintWords.has(w));
-    if (candidates.length === 0) return;
-    const word = candidates[Math.floor(Math.random() * candidates.length)];
-    const group = puzzle.groups.find((g) => g.words.includes(word));
-    if (!group) return;
-    setHintWords((prev) => new Map([...prev, [word, DIFFICULTY_COLORS[group.difficulty]]]));
-  }, [hintWords, shuffledWords, puzzle.groups]);
+    if (hintCount >= MAX_HINTS) return;
+
+    const availableGroups = puzzle.groups.filter(
+      (group) => !solvedGroups.includes(group) && group.words.some((word) => shuffledWords.includes(word)),
+    );
+    if (availableGroups.length === 0) return;
+
+    // 첫 힌트는 같은 그룹의 단어 2개를 보여주고, 이후에는 한 단어씩 더 보여준다.
+    const hintedGroup = availableGroups.find((group) => [...hintWords.keys()].some((word) => group.words.includes(word)));
+    const group = hintedGroup ?? availableGroups[Math.floor(Math.random() * availableGroups.length)];
+    const remainingWords = group.words.filter((word) => shuffledWords.includes(word) && !hintWords.has(word));
+    if (remainingWords.length === 0) return;
+
+    const wordsToReveal = remainingWords.slice(0, hintCount === 0 ? 2 : 1);
+    setHintWords((prev) => {
+      const next = new Map(prev);
+      for (const word of wordsToReveal) next.set(word, DIFFICULTY_COLORS[group.difficulty]);
+      return next;
+    });
+    setHintCount((prev) => prev + 1);
+  }, [hintCount, hintWords, shuffledWords, solvedGroups, puzzle.groups]);
 
   // 정답이면 애니메이션 후 submitGuess, 오답이면 즉시
   const handleSubmit = useCallback(() => {
@@ -202,9 +215,9 @@ export function GameBoard({ puzzle, puzzleNumber, stats, recordResult, exportSta
         <button
           className="btn btn-secondary"
           onClick={handleHint}
-          disabled={!isPlaying || !!solvingWords || hintWords.size >= MAX_HINTS}
+          disabled={!isPlaying || !!solvingWords || hintCount >= MAX_HINTS}
         >
-          힌트 ({MAX_HINTS - hintWords.size})
+          힌트 ({MAX_HINTS - hintCount})
         </button>
       </div>
 
@@ -222,7 +235,7 @@ export function GameBoard({ puzzle, puzzleNumber, stats, recordResult, exportSta
           solvedGroups={solvedGroups}
           stats={stats}
           elapsed={elapsed}
-          hintCount={hintWords.size}
+          hintCount={hintCount}
           exportStats={exportStats}
           importStats={importStats}
           onClose={() => setShowResult(false)}
