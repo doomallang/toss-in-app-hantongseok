@@ -1271,6 +1271,96 @@ export const puzzles: Puzzle[] = [
       { category: "세계의 큰 호수", words: ["바이칼호", "빅토리아호", "슈피리어호", "탕가니카호"], difficulty: 4 },
     ],
   },
+  {
+    id: 140,
+    groups: [
+      { category: "자동차 계기판 경고등", words: ["엔진경고등", "배터리경고등", "브레이크경고등", "에어백경고등"], difficulty: 1 },
+      { category: "자동차 연료", words: ["휘발유", "경유", "LPG", "수소"], difficulty: 2 },
+      { category: "자동차 외장 부위", words: ["범퍼", "보닛", "트렁크", "사이드미러"], difficulty: 3 },
+      { category: "운전면허 기능시험 항목", words: ["경사로", "좌회전", "우회전", "평행주차"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 141,
+    groups: [
+      { category: "식품 보존 방법", words: ["냉장", "냉동", "훈연", "염장"], difficulty: 1 },
+      { category: "곡물 종류", words: ["기장", "메밀", "율무", "퀴노아"], difficulty: 2 },
+      { category: "견과류", words: ["아몬드", "호두", "캐슈너트", "피스타치오"], difficulty: 3 },
+      { category: "버섯 종류", words: ["표고버섯", "느타리버섯", "팽이버섯", "새송이버섯"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 142,
+    groups: [
+      { category: "음표 길이", words: ["온음표", "2분음표", "4분음표", "8분음표"], difficulty: 1 },
+      { category: "셈여림표", words: ["피아니시모", "포르티시모", "메조피아노", "메조포르테"], difficulty: 2 },
+      { category: "음악 빠르기말", words: ["라르고", "안단테", "알레그로", "프레스토"], difficulty: 3 },
+      { category: "음악 연주 형태", words: ["독주", "중주", "합주", "합창"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 143,
+    groups: [
+      { category: "회화 재료", words: ["과슈", "템페라", "먹", "목탄"], difficulty: 1 },
+      { category: "조각 재료", words: ["대리석", "청동", "목재", "점토"], difficulty: 2 },
+      { category: "한국 회화 장르", words: ["산수화", "풍속화", "문인화", "민화"], difficulty: 3 },
+      { category: "판화 기법", words: ["목판화", "동판화", "석판화", "실크스크린"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 144,
+    groups: [
+      { category: "한옥의 구조", words: ["대청마루", "온돌", "기둥", "사랑채"], difficulty: 1 },
+      { category: "한국 전통 가구", words: ["소반", "반닫이", "장롱", "문갑"], difficulty: 2 },
+      { category: "전통 혼례 복식", words: ["족두리", "원삼", "사모관대", "연지곤지"], difficulty: 3 },
+      { category: "한국 전통 무예", words: ["택견", "씨름", "궁술", "검술"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 145,
+    groups: [
+      { category: "응급처치 용품", words: ["붕대", "소독약", "거즈", "반창고"], difficulty: 1 },
+      { category: "화재 예방 설비", words: ["스프링클러", "화재경보기", "피난유도등", "방화문"], difficulty: 2 },
+      { category: "소방관 보호 장비", words: ["소방헬멧", "방화복", "공기호흡기", "안전장갑"], difficulty: 3 },
+      { category: "해상 구조 장비", words: ["구명조끼", "구명환", "구조로프", "조난신호탄"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 146,
+    groups: [
+      { category: "한글 자음", words: ["ㄱ", "ㄴ", "ㄷ", "ㄹ"], difficulty: 1 },
+      { category: "한글 모음", words: ["ㅏ", "ㅑ", "ㅓ", "ㅕ"], difficulty: 2 },
+      { category: "문장 성분", words: ["주어", "서술어", "목적어", "보어"], difficulty: 3 },
+      { category: "품사", words: ["명사", "동사", "형용사", "부사"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 147,
+    groups: [
+      { category: "생활 가전제품", words: ["로봇청소기", "제습기", "의류관리기", "음식물처리기"], difficulty: 1 },
+      { category: "욕실 배관 설비", words: ["배수구", "수도꼭지", "샤워기", "세면대"], difficulty: 2 },
+      { category: "창문 주변 용품", words: ["방충망", "커튼", "블라인드", "창틀"], difficulty: 3 },
+      { category: "청소 도구", words: ["빗자루", "쓰레받기", "걸레", "먼지떨이"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 148,
+    groups: [
+      { category: "교량 구조물", words: ["교각", "교대", "난간", "상판"], difficulty: 1 },
+      { category: "건설 현장 장비", words: ["굴착기", "불도저", "크레인", "레미콘"], difficulty: 2 },
+      { category: "건축 도면 종류", words: ["평면도", "입면도", "단면도", "배치도"], difficulty: 3 },
+      { category: "주택 형태", words: ["아파트", "단독주택", "연립주택", "타운하우스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 149,
+    groups: [
+      { category: "체스 기물", words: ["킹", "퀸", "룩", "비숍"], difficulty: 1 },
+      { category: "바둑 기본 용어", words: ["흑돌", "백돌", "집", "패"], difficulty: 2 },
+      { category: "윷놀이 말 결과", words: ["도", "개", "걸", "윷"], difficulty: 3 },
+      { category: "화투 패 종류", words: ["광", "열끗", "띠", "피"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
