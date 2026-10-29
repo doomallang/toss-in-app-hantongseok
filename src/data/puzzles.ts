@@ -1541,6 +1541,96 @@ export const puzzles: Puzzle[] = [
       { category: "수영 경기 용어", words: ["출발대", "턴", "터치패드", "레인"], difficulty: 4 },
     ],
   },
+  {
+    id: 170,
+    groups: [
+      { category: "사진 촬영 기본 장비", words: ["카메라바디", "모노포드", "메모리카드", "카메라가방"], difficulty: 1 },
+      { category: "카메라 렌즈 종류", words: ["광각렌즈", "표준렌즈", "망원렌즈", "매크로렌즈"], difficulty: 2 },
+      { category: "사진 구도 기법", words: ["삼분할구도", "대칭구도", "리딩라인", "프레이밍"], difficulty: 3 },
+      { category: "사진 보정 항목", words: ["노출", "대비", "채도", "화이트밸런스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 171,
+    groups: [
+      { category: "반려견 산책 용품", words: ["목줄", "하네스", "배변봉투", "휴대용물통"], difficulty: 1 },
+      { category: "반려묘 생활 용품", words: ["화장실모래", "스크래처", "숨숨집", "이동장"], difficulty: 2 },
+      { category: "반려동물 건강 관리", words: ["예방접종", "구충", "건강검진", "중성화수술"], difficulty: 3 },
+      { category: "반려동물 훈련 명령", words: ["앉아", "기다려", "엎드려", "이리와"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 172,
+    groups: [
+      { category: "등산 필수 장비", words: ["등산배낭", "등산스틱", "등산모", "레인커버"], difficulty: 1 },
+      { category: "등산로 안내 시설", words: ["이정표", "등산로지도", "국가지점번호판", "구간안내판"], difficulty: 2 },
+      { category: "산행 안전 행동", words: ["기상확인", "수분섭취", "일행과동행", "해지기전하산"], difficulty: 3 },
+      { category: "산의 지형", words: ["봉우리", "능선", "고개", "계곡"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 173,
+    groups: [
+      { category: "낚시 기본 장비", words: ["낚싯대", "릴", "낚싯줄", "뜰채"], difficulty: 1 },
+      { category: "낚시 채비 용품", words: ["낚시바늘", "찌", "봉돌", "미끼통"], difficulty: 2 },
+      { category: "낚시터 안전 용품", words: ["자동팽창식구명조끼", "편광안경", "미끄럼방지신발", "구급상자"], difficulty: 3 },
+      { category: "민물고기 종류", words: ["붕어", "잉어", "송어", "메기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 174,
+    groups: [
+      { category: "클렌징 제품 종류", words: ["클렌징밤", "클렌징폼", "클렌징오일", "클렌징워터"], difficulty: 1 },
+      { category: "자외선 차단 제품", words: ["무기자차", "유기자차", "혼합자차", "선로션"], difficulty: 2 },
+      { category: "눈 화장 제품", words: ["아이라이너", "마스카라", "아이브로우", "언더섀도"], difficulty: 3 },
+      { category: "손톱 관리 용품", words: ["네일파일", "큐티클오일", "베이스코트", "탑코트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 175,
+    groups: [
+      { category: "컴퓨터 게임 조작 장비", words: ["게임패드", "조이스틱", "레이싱휠", "아케이드스틱"], difficulty: 1 },
+      { category: "컴퓨터 저장 장치", words: ["SSD", "하드디스크", "USB메모리", "외장하드"], difficulty: 2 },
+      { category: "가정용 인터넷 장비", words: ["광모뎀", "랜케이블", "와이파이확장기", "이더넷허브"], difficulty: 3 },
+      { category: "웹 브라우저", words: ["크롬", "사파리", "파이어폭스", "엣지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 176,
+    groups: [
+      { category: "분리수거함 표기 색상", words: ["파란색", "초록색", "노란색", "회색"], difficulty: 1 },
+      { category: "쓰레기 감량 실천", words: ["장바구니사용", "텀블러사용", "리필제품구매", "음식물남기지않기"], difficulty: 2 },
+      { category: "친환경 교통수단", words: ["도보", "전기버스", "전기열차", "전기트램"], difficulty: 3 },
+      { category: "기후변화 대응 행동", words: ["에너지절약", "물절약", "나무심기", "대중교통이용"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 177,
+    groups: [
+      { category: "목공 측정 도구", words: ["캘리퍼스", "직각자", "수평계", "먹줄"], difficulty: 1 },
+      { category: "목공 절단 도구", words: ["양날톱", "직소", "원형톱", "평끌"], difficulty: 2 },
+      { category: "목재 연결 부품", words: ["못", "나사못", "목심", "경첩"], difficulty: 3 },
+      { category: "가구 표면 마감재", words: ["사포", "바니시", "오일스테인", "우드필러"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 178,
+    groups: [
+      { category: "바느질 기본 도구", words: ["재봉바늘", "실", "골무", "핀쿠션"], difficulty: 1 },
+      { category: "옷감 종류", words: ["리넨", "데님", "벨벳", "코듀로이"], difficulty: 2 },
+      { category: "의류 재단 도구", words: ["재단가위", "초크", "패턴지", "재단용자"], difficulty: 3 },
+      { category: "자수 기법", words: ["프렌치노트", "새틴스티치", "백스티치", "체인스티치"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 179,
+    groups: [
+      { category: "과학 실험 안전 장비", words: ["보안경", "실험복", "내열장갑", "세안기"], difficulty: 1 },
+      { category: "화학 실험 유리기구", words: ["비커", "플라스크", "시험관", "메스실린더"], difficulty: 2 },
+      { category: "현미경 관찰 도구", words: ["슬라이드글라스", "커버글라스", "스포이트", "해부침"], difficulty: 3 },
+      { category: "실험 결과 기록 도구", words: ["실험노트", "그래프용지", "클립보드", "유성펜"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
