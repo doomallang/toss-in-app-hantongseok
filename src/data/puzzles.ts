@@ -1901,6 +1901,96 @@ export const puzzles: Puzzle[] = [
       { category: "전기 회로 작업 도구", words: ["멀티미터", "납땜인두", "전선피복", "절연테이프"], difficulty: 4 },
     ],
   },
+  {
+    id: 210,
+    groups: [
+      { category: "아이스하키 보호 장비", words: ["하키헬멧", "하키장갑", "숄더패드", "정강이보호대"], difficulty: 1 },
+      { category: "아이스하키 스틱 구성", words: ["샤프트", "블레이드", "그립테이프", "스틱엔드"], difficulty: 2 },
+      { category: "아이스하키 링크 표기", words: ["센터서클", "페이스오프점", "골라인", "블루라인"], difficulty: 3 },
+      { category: "아이스하키 경기 규칙", words: ["바디체킹", "파워플레이", "페널티샷", "오프사이드"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 211,
+    groups: [
+      { category: "오페라 무대 시설", words: ["오케스트라피트", "프롬프터박스", "무대막", "세트디자인"], difficulty: 1 },
+      { category: "오페라 제작 직군", words: ["주역가수", "조역가수", "합창단원", "무용수"], difficulty: 2 },
+      { category: "오페라 대표 작품", words: ["라트라비아타", "카르멘", "마술피리", "투란도트"], difficulty: 3 },
+      { category: "오페라 음악 형식", words: ["아리아", "레치타티보", "서곡", "앙상블"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 212,
+    groups: [
+      { category: "수채화 기본 재료", words: ["수채화물감", "파레트", "수채화붓", "물통"], difficulty: 1 },
+      { category: "수채화 용지 종류", words: ["수채화지", "세목지", "중목지", "황목지"], difficulty: 2 },
+      { category: "수채화 표현 기법", words: ["번짐기법", "젖은붓기법", "마른붓기법", "겹칠기법"], difficulty: 3 },
+      { category: "수채화 물감 색상", words: ["울트라마린", "번트시엔나", "옐로오커", "버밀리언"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 213,
+    groups: [
+      { category: "지진 관측 장비", words: ["지진계", "진도계", "가속도계", "지진관측소"], difficulty: 1 },
+      { category: "지진 발생 용어", words: ["진원", "진앙", "단층면", "여진"], difficulty: 2 },
+      { category: "지진 규모·진도 척도", words: ["리히터규모", "모멘트규모", "수정메르칼리진도", "일본기상청진도"], difficulty: 3 },
+      { category: "지진 발생 시 행동", words: ["낮은자세유지", "머리보호", "가스차단", "엘리베이터금지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 214,
+    groups: [
+      { category: "서핑 기본 장비", words: ["서프보드", "리시코드", "서프왁스", "래시가드"], difficulty: 1 },
+      { category: "서프보드 구성", words: ["노즈", "테일", "핀박스", "스트링거"], difficulty: 2 },
+      { category: "서핑 기본 동작", words: ["패들링", "팝업", "테이크오프", "라이딩"], difficulty: 3 },
+      { category: "서핑 안전 수칙", words: ["파도예측", "이안류확인", "우선권준수", "혼자입수금지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 215,
+    groups: [
+      { category: "당구 경기 장비", words: ["당구큐", "당구공", "큐초크", "메카니컬브리지"], difficulty: 1 },
+      { category: "당구대 구성", words: ["당구대천", "쿠션고무", "주머니", "다이아몬드마크"], difficulty: 2 },
+      { category: "당구 종목", words: ["캐롬", "포켓볼", "스리쿠션", "사구"], difficulty: 3 },
+      { category: "당구 기본 기술", words: ["옆돌리기", "뒤돌리기", "비껴치기", "대회전"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 216,
+    groups: [
+      { category: "판소리 다섯 마당", words: ["춘향가", "심청가", "흥보가", "수궁가"], difficulty: 1 },
+      { category: "판소리 구성 요소", words: ["소리", "아니리", "발림", "추임새"], difficulty: 2 },
+      { category: "판소리 장단", words: ["진양조", "중모리", "중중모리", "자진모리"], difficulty: 3 },
+      { category: "판소리 유파", words: ["동편제", "서편제", "중고제", "동초제"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 217,
+    groups: [
+      { category: "조류 관찰 장비", words: ["쌍안경", "필드스코프", "조류도감", "관찰노트"], difficulty: 1 },
+      { category: "새의 부위", words: ["부리", "날개깃", "꼬리깃", "발톱"], difficulty: 2 },
+      { category: "새의 이동 방식", words: ["활공", "날갯짓", "호버링", "급강하"], difficulty: 3 },
+      { category: "새 관찰 예절", words: ["조용히관찰하기", "둥지거리두기", "먹이주지않기", "서식지훼손금지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 218,
+    groups: [
+      { category: "젤라토 제조 재료", words: ["젤라토베이스", "우유지방", "천연과즙", "설탕시럽"], difficulty: 1 },
+      { category: "젤라토 제조 장비", words: ["배치프리저", "저온살균기", "숙성탱크", "스패튤러"], difficulty: 2 },
+      { category: "젤라토 맛 종류", words: ["아마레나", "헤이즐넛", "스트라차텔라", "솔티드카라멜"], difficulty: 3 },
+      { category: "젤라토 판매 용기", words: ["젤라토컵", "와플콘", "테이크아웃스푼", "보냉용기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 219,
+    groups: [
+      { category: "배드민턴 경기 장비", words: ["배드민턴라켓", "셔틀콕", "라켓그립", "스트링"], difficulty: 1 },
+      { category: "배드민턴 코트 구역", words: ["서비스코트", "센터라인", "백바운더리라인", "사이드라인"], difficulty: 2 },
+      { category: "배드민턴 타구 기술", words: ["클리어", "드롭샷", "스매시", "푸시"], difficulty: 3 },
+      { category: "배드민턴 복식 전술", words: ["로테이션", "전위후위배치", "드라이브공방", "빈공간공략"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
