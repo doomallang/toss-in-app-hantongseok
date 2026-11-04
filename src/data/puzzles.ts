@@ -1991,6 +1991,96 @@ export const puzzles: Puzzle[] = [
       { category: "배드민턴 복식 전술", words: ["로테이션", "전위후위배치", "드라이브공방", "빈공간공략"], difficulty: 4 },
     ],
   },
+  {
+    id: 220,
+    groups: [
+      { category: "양궁 기본 장비", words: ["리커브보우", "카본화살", "암가드", "체스트가드"], difficulty: 1 },
+      { category: "양궁 활 조준 장치", words: ["사이트", "플런저", "클리커", "스테빌라이저"], difficulty: 2 },
+      { category: "양궁 사격 동작", words: ["셋업", "앵커링", "에이밍", "팔로스루"], difficulty: 3 },
+      { category: "양궁 경기 진행", words: ["사대", "엔드", "스코어카드", "화살회수"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 221,
+    groups: [
+      { category: "광학 현미경 구성", words: ["객관렌즈", "접안렌즈", "재물대", "조리개"], difficulty: 1 },
+      { category: "현미경 표본 제작 재료", words: ["파라핀", "염색액", "고정액", "증류수"], difficulty: 2 },
+      { category: "현미경 관찰 방식", words: ["명시야관찰", "암시야관찰", "위상차관찰", "형광관찰"], difficulty: 3 },
+      { category: "현미경 관찰 표본", words: ["양파표피", "구강상피세포", "물벼룩", "짚신벌레"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 222,
+    groups: [
+      { category: "빵 반죽 기본 재료", words: ["호밀가루", "사워도우스타터", "맥아가루", "제빵개량제"], difficulty: 1 },
+      { category: "제빵 작업 도구", words: ["도우블렌더", "발효상자", "식힘망", "제빵솔"], difficulty: 2 },
+      { category: "빵 반죽 발효 단계", words: ["오토리즈", "1차발효", "벤치타임", "2차발효"], difficulty: 3 },
+      { category: "유럽식 빵 종류", words: ["캉파뉴", "사워도우", "프레첼", "팡드미"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 223,
+    groups: [
+      { category: "카약 필수 장비", words: ["투어링카약", "더블블레이드패들", "부력보조복", "스프레이스커트"], difficulty: 1 },
+      { category: "카약 선체 부위", words: ["선수", "선미", "콕핏", "선저"], difficulty: 2 },
+      { category: "카약 패들링 기술", words: ["포워드스트로크", "리버스스트로크", "스위프스트로크", "드로스트로크"], difficulty: 3 },
+      { category: "카약 구조 기술", words: ["웻엑시트", "셀프리엔트리", "래스큐토우", "라프트업"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 224,
+    groups: [
+      { category: "수족관 수질 관리 장비", words: ["외부여과기", "에어펌프", "이산화탄소확산기", "수질측정키트"], difficulty: 1 },
+      { category: "열대어 수조 장식", words: ["유목", "수초", "바닥재", "은신처"], difficulty: 2 },
+      { category: "열대어 먹이 종류", words: ["플레이크사료", "펠릿사료", "브라인슈림프", "냉동짱구벌레"], difficulty: 3 },
+      { category: "수족관 물고기 질병", words: ["백점병", "꼬리썩음병", "솔방울병", "복수병"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 225,
+    groups: [
+      { category: "기상 측정 기구", words: ["자동기상관측장비", "컵풍속계", "풍향계", "우량계"], difficulty: 1 },
+      { category: "일기도 분석 자료", words: ["일기도", "레이더영상", "위성영상", "기상예보도"], difficulty: 2 },
+      { category: "일기도 기압계 용어", words: ["대기전선", "기압골", "저기압", "고기압"], difficulty: 3 },
+      { category: "기상 특보 종류", words: ["태풍주의보", "건조주의보", "폭염경보", "풍랑주의보"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 226,
+    groups: [
+      { category: "보석 감정 장비", words: ["보석루페", "굴절계", "편광기", "자외선램프"], difficulty: 1 },
+      { category: "보석의 물리적 성질", words: ["경도", "비중", "굴절률", "복굴절"], difficulty: 2 },
+      { category: "보석 연마 형태", words: ["라운드브릴리언트컷", "에메랄드컷", "오벌컷", "페어컷"], difficulty: 3 },
+      { category: "유색 보석 종류", words: ["탄자나이트", "스피넬", "페리도트", "모거나이트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 227,
+    groups: [
+      { category: "오케스트라 지휘 도구", words: ["지휘봉", "총보", "지휘대", "스톱워치"], difficulty: 1 },
+      { category: "지휘 기본 신호", words: ["준비박", "다운비트", "업비트", "큐사인"], difficulty: 2 },
+      { category: "악보의 빠르기말", words: ["그라베", "비바체", "모데라토", "아다지오"], difficulty: 3 },
+      { category: "악보의 셈여림말", words: ["피아니시시모", "포르티시시모", "스포르찬도", "린포르찬도"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 228,
+    groups: [
+      { category: "로드사이클 필수 장비", words: ["로드자전거", "사이클헬멧", "클릿슈즈", "물통케이지"], difficulty: 1 },
+      { category: "로드자전거 구동 부품", words: ["드롭바", "크랭크셋", "카세트스프라켓", "디레일러"], difficulty: 2 },
+      { category: "사이클링 집단 주행 전술", words: ["펠로톤", "리드아웃", "브리지전술", "역풍구간"], difficulty: 3 },
+      { category: "투르드프랑스 저지", words: ["옐로저지", "그린저지", "폴카도트저지", "화이트저지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 229,
+    groups: [
+      { category: "바이올린 제작 재료", words: ["단풍나무판", "가문비나무판", "흑단목", "동물성아교"], difficulty: 1 },
+      { category: "바이올린 제작 공구", words: ["곡면대패", "조각끌", "스크레이퍼", "바이올린클램프"], difficulty: 2 },
+      { category: "바이올린 머리·꼬리 부위", words: ["페그박스", "너트", "새들", "엔드핀"], difficulty: 3 },
+      { category: "현악기 제작 공정", words: ["판재건조", "옆판굽힘", "몸통접착", "바니싱"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
