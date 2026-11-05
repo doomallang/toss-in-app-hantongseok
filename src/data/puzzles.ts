@@ -2081,6 +2081,96 @@ export const puzzles: Puzzle[] = [
       { category: "현악기 제작 공정", words: ["판재건조", "옆판굽힘", "몸통접착", "바니싱"], difficulty: 4 },
     ],
   },
+  {
+    id: 230,
+    groups: [
+      { category: "골프 클럽 종류", words: ["우드", "아이언", "웨지", "퍼터"], difficulty: 1 },
+      { category: "골프 코스 구역", words: ["티잉그라운드", "페어웨이", "러프", "그린"], difficulty: 2 },
+      { category: "골프 스코어 용어", words: ["버디", "이글", "파", "보기"], difficulty: 3 },
+      { category: "골프 스윙 단계", words: ["어드레스", "백스윙", "다운스윙", "피니시"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 231,
+    groups: [
+      { category: "볼링 경기 장비", words: ["볼링공", "볼링화", "리스트서포트", "볼링타월"], difficulty: 1 },
+      { category: "볼링 레인 구성", words: ["파울라인", "에임마크", "거터", "핀덱"], difficulty: 2 },
+      { category: "볼링 투구 결과", words: ["스트라이크", "스페어", "스플릿", "터키"], difficulty: 3 },
+      { category: "볼링 투구 방식", words: ["스트레이트볼", "훅볼", "커브볼", "백업볼"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 232,
+    groups: [
+      { category: "스쿠버다이빙 기본 장비", words: ["다이빙마스크", "스노클", "오리발", "부력조절기"], difficulty: 1 },
+      { category: "스쿠버다이빙 호흡 장비", words: ["공기통", "레귤레이터", "옥토퍼스", "압력게이지"], difficulty: 2 },
+      { category: "스쿠버다이빙 수중 신호", words: ["하강신호", "상승신호", "공기부족신호", "문제발생신호"], difficulty: 3 },
+      { category: "스쿠버다이빙 안전 절차", words: ["버디체크", "안전정지", "감압정지", "로그북기록"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 233,
+    groups: [
+      { category: "스케이트보드 구성품", words: ["데크", "트럭", "휠", "베어링"], difficulty: 1 },
+      { category: "스케이트보드 보호 장비", words: ["스케이트헬멧", "손목가드", "무릎가드", "팔꿈치가드"], difficulty: 2 },
+      { category: "스케이트보드 기본 기술", words: ["푸싱", "틱택", "매뉴얼", "킥턴"], difficulty: 3 },
+      { category: "스케이트파크 구조물", words: ["하프파이프", "쿼터파이프", "레일", "펀박스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 234,
+    groups: [
+      { category: "칵테일 제조 도구", words: ["칵테일셰이커", "지거", "바스푼", "머들러"], difficulty: 1 },
+      { category: "칵테일 제조 기법", words: ["셰이킹", "스터링", "빌딩", "플로팅"], difficulty: 2 },
+      { category: "칵테일 장식 재료", words: ["레몬트위스트", "칵테일올리브", "마라스키노체리", "민트스프리그"], difficulty: 3 },
+      { category: "칵테일 잔 종류", words: ["하이볼글라스", "올드패션드글라스", "마티니글라스", "쿠페글라스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 235,
+    groups: [
+      { category: "시계 외관 구성", words: ["케이스백", "용두", "베젤", "러그"], difficulty: 1 },
+      { category: "기계식 시계 무브먼트 부품", words: ["태엽", "밸런스휠", "이스케이프먼트", "기어트레인"], difficulty: 2 },
+      { category: "시계 수리 도구", words: ["시계루페", "케이스오프너", "시계핀셋", "오일러"], difficulty: 3 },
+      { category: "시계 추가 기능", words: ["날짜창", "문페이즈", "크로노그래프", "GMT기능"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 236,
+    groups: [
+      { category: "테니스 경기 장비", words: ["테니스라켓", "테니스공", "오버그립", "진동흡수기"], difficulty: 1 },
+      { category: "테니스 코트 표면", words: ["하드코트", "클레이코트", "잔디코트", "카펫코트"], difficulty: 2 },
+      { category: "테니스 서브 종류", words: ["플랫서브", "슬라이스서브", "킥서브", "언더핸드서브"], difficulty: 3 },
+      { category: "테니스 득점 용어", words: ["듀스", "어드밴티지", "타이브레이크", "세트포인트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 237,
+    groups: [
+      { category: "맥주 양조 기본 재료", words: ["맥아", "홉", "양조효모", "양조수"], difficulty: 1 },
+      { category: "맥주 양조 장비", words: ["매시턴", "발효조", "비중계", "병마개압착기"], difficulty: 2 },
+      { category: "맥주 양조 공정", words: ["매싱", "라우터링", "워팅", "컨디셔닝"], difficulty: 3 },
+      { category: "맥주 스타일", words: ["필스너", "인디아페일에일", "스타우트", "바이젠"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 238,
+    groups: [
+      { category: "천체 관측 망원경 부품", words: ["적도의", "파인더스코프", "천정미러", "접안필터"], difficulty: 1 },
+      { category: "천구 좌표 용어", words: ["적경", "적위", "방위각", "고도각"], difficulty: 2 },
+      { category: "성운 종류", words: ["발광성운", "반사성운", "암흑성운", "행성상성운"], difficulty: 3 },
+      { category: "별 관측 기록 항목", words: ["관측일시", "시상", "투명도", "한계등급"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 239,
+    groups: [
+      { category: "종이접기 기본 재료", words: ["접기종이", "접기자", "본폴더", "종이접기풀"], difficulty: 1 },
+      { category: "종이접기 기본선", words: ["골선", "산선", "대각선", "중심선"], difficulty: 2 },
+      { category: "종이접기 기본 기법", words: ["계곡접기", "산접기", "주름접기", "안쪽뒤집기"], difficulty: 3 },
+      { category: "종이접기 작품 형태", words: ["종이학", "종이개구리", "종이배", "종이풍선"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
