@@ -2171,6 +2171,96 @@ export const puzzles: Puzzle[] = [
       { category: "종이접기 작품 형태", words: ["종이학", "종이개구리", "종이배", "종이풍선"], difficulty: 4 },
     ],
   },
+  {
+    id: 240,
+    groups: [
+      { category: "인라인스케이팅 보호 장비", words: ["인라인헬멧", "손목보호대인라인", "무릎보호대인라인", "팔꿈치보호대인라인"], difficulty: 1 },
+      { category: "인라인스케이트 구성", words: ["인라인스케이트부츠", "알루미늄프레임", "인라인휠", "힐브레이크"], difficulty: 2 },
+      { category: "인라인스케이팅 기본 동작", words: ["활주", "크로스오버", "T스톱", "A자멈춤"], difficulty: 3 },
+      { category: "인라인스케이팅 코스 예절", words: ["보행자배려", "추월신호", "안전거리유지", "역주행금지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 241,
+    groups: [
+      { category: "커피 로스팅 장비", words: ["커피로스터", "배기장치", "냉각트레이", "생두계량기"], difficulty: 1 },
+      { category: "커피 로스팅 단계", words: ["건조단계", "갈변단계", "1차크랙", "디벨롭먼트"], difficulty: 2 },
+      { category: "커피 원두 가공법", words: ["수세식가공", "건식가공", "허니프로세스", "펄프드내추럴"], difficulty: 3 },
+      { category: "커피 향미 표현", words: ["시트러스", "초콜릿향", "견과류향", "꽃향기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 242,
+    groups: [
+      { category: "드론 조종 장비", words: ["드론조종기", "FPV고글", "조종배터리", "태블릿거치대"], difficulty: 1 },
+      { category: "드론 비행 안전 절차", words: ["비행금지구역확인", "비행가능시간확인", "조종자등록", "비행계획승인"], difficulty: 2 },
+      { category: "드론 촬영 구도", words: ["탑다운샷", "패닝샷", "트래킹샷", "오빗샷"], difficulty: 3 },
+      { category: "드론 비행 센서", words: ["GPS모듈", "자력계", "자이로센서", "장애물감지센서"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 243,
+    groups: [
+      { category: "양봉 기본 장비", words: ["벌통", "양봉면망", "벌연기", "벌통끌"], difficulty: 1 },
+      { category: "꿀벌의 계급", words: ["여왕벌", "일벌", "수벌", "애벌레"], difficulty: 2 },
+      { category: "꿀 채밀 과정", words: ["소비탈봉", "밀랍뚜껑제거", "원심분리", "여과"], difficulty: 3 },
+      { category: "벌꿀 종류", words: ["아카시아꿀", "밤꿀", "유채꿀", "잡화꿀"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 244,
+    groups: [
+      { category: "수영 출발대 구조", words: ["출발발판", "등받이발판", "미끄럼방지표면", "출발번호판"], difficulty: 1 },
+      { category: "수영 출발대 동작", words: ["차렷", "출발자세", "입수", "돌핀킥"], difficulty: 2 },
+      { category: "수영 턴 종류", words: ["플립턴", "오픈턴", "터치턴", "회전턴"], difficulty: 3 },
+      { category: "수영 경기 심판 신호", words: ["출발신호", "실격신호", "계주교대판정", "기록확정"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 245,
+    groups: [
+      { category: "실내 식물 관리 도구", words: ["물뿌리개", "분무기식물", "흙삽", "식물전용가위"], difficulty: 1 },
+      { category: "실내 식물 흙 배합 재료", words: ["난석", "적옥토", "코코칩", "왕겨숯"], difficulty: 2 },
+      { category: "실내 식물 잎 관리", words: ["잎먼지제거", "잎분무", "잎뒷면점검", "회전배치"], difficulty: 3 },
+      { category: "실내 식물 증식 방법", words: ["삽목", "포기나누기", "물꽂이", "취목"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 246,
+    groups: [
+      { category: "도서관 이용 시설", words: ["자료검색대", "대출반납기", "개가자료실", "서가"], difficulty: 1 },
+      { category: "도서 분류 체계", words: ["총류", "철학", "사회과학", "자연과학"], difficulty: 2 },
+      { category: "도서관 자료 종류", words: ["고문헌", "악보자료", "점자도서", "큰글자책"], difficulty: 3 },
+      { category: "도서 대출 절차", words: ["회원증제시", "대출등록", "반납기한확인", "영수증수령"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 247,
+    groups: [
+      { category: "응급처치 기본 물품", words: ["휴대용구급상자", "소독솜", "탄력붕대", "일회용장갑"], difficulty: 1 },
+      { category: "응급상황 신고 정보", words: ["사고장소", "환자상태", "연락처", "사고경위"], difficulty: 2 },
+      { category: "심폐소생술 순서", words: ["반응확인", "119신고", "가슴압박", "자동심장충격기사용"], difficulty: 3 },
+      { category: "상처 처치 원칙", words: ["손씻기", "출혈압박", "상처세척", "드레싱교체"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 248,
+    groups: [
+      { category: "라디오 방송 장비", words: ["방송마이크", "믹싱콘솔", "모니터스피커", "송출컴퓨터"], difficulty: 1 },
+      { category: "라디오 프로그램 구성", words: ["오프닝", "사연소개", "음악선곡", "클로징"], difficulty: 2 },
+      { category: "라디오 음향 용어", words: ["페이드인", "페이드아웃", "시그널음악", "효과음"], difficulty: 3 },
+      { category: "라디오 청취 방식", words: ["주파수청취", "인터넷라디오", "다시듣기", "팟캐스트"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 249,
+    groups: [
+      { category: "음식물 쓰레기 분리 기준", words: ["뼈제거", "껍질확인", "수분제거", "이물질제거"], difficulty: 1 },
+      { category: "재활용품 분리 배출", words: ["투명페트병", "종이팩", "알루미늄캔", "갈색유리병"], difficulty: 2 },
+      { category: "재사용 생활용품", words: ["장바구니", "텀블러", "다회용기", "손수건"], difficulty: 3 },
+      { category: "자원순환 실천", words: ["리필구매", "수선하기", "나눔하기", "업사이클링"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
