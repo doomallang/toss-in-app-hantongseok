@@ -2351,6 +2351,96 @@ export const puzzles: Puzzle[] = [
       { category: "자전거 휴대 공구", words: ["육각렌치세트", "타이어부트", "휴대펌프", "체인툴"], difficulty: 4 },
     ],
   },
+  {
+    id: 260,
+    groups: [
+      { category: "도자기 제작 도구", words: ["도예물레", "조각칼", "도예용스펀지", "흙반죽판"], difficulty: 1 },
+      { category: "도자기 성형 기법", words: ["물레성형", "판성형", "코일링", "석고틀성형"], difficulty: 2 },
+      { category: "도자기 표면 장식", words: ["청화", "분청", "철화", "빗살무늬"], difficulty: 3 },
+      { category: "도자기 가마 소성 단계", words: ["초벌소성", "유약시유", "재벌소성", "냉각"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 261,
+    groups: [
+      { category: "세탁 준비 용품", words: ["세탁망", "빨래비누", "세제뚜껑", "빨래바구니"], difficulty: 1 },
+      { category: "세탁기 코스", words: ["표준코스", "삶음코스", "급속코스", "헹굼탈수코스"], difficulty: 2 },
+      { category: "의류 관리 표시", words: ["물세탁표시", "드라이클리닝표시", "표백금지표시", "다림질표시"], difficulty: 3 },
+      { category: "빨래 건조 방법", words: ["자연건조", "건조기건조", "그늘건조", "평평건조"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 262,
+    groups: [
+      { category: "암벽등반 안전 장비", words: ["클라이밍하네스", "암벽헬멧", "확보기", "잠금카라비너"], difficulty: 1 },
+      { category: "암벽등반 로프 장비", words: ["다이내믹로프", "퀵드로", "슬링", "초크백"], difficulty: 2 },
+      { category: "암벽등반 기본 동작", words: ["클리핑", "빌레이", "래펠", "크랙등반"], difficulty: 3 },
+      { category: "실내 클라이밍 홀드", words: ["저그홀드", "크림프홀드", "슬로퍼홀드", "포켓홀드"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 263,
+    groups: [
+      { category: "초콜릿 만들기 도구", words: ["중탕볼", "폴리카보네이트몰드", "초콜릿온도계", "실리콘주걱"], difficulty: 1 },
+      { category: "초콜릿의 원재료", words: ["카카오매스", "코코아버터", "설탕", "레시틴"], difficulty: 2 },
+      { category: "초콜릿 제조 과정", words: ["템퍼링", "몰딩", "결정화", "탈형"], difficulty: 3 },
+      { category: "초콜릿 장식 재료", words: ["견과류토핑", "동결건조딸기", "코코아닙스", "식용금박"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 264,
+    groups: [
+      { category: "다도 기본 도구", words: ["다관", "다완", "차탁", "차칙"], difficulty: 1 },
+      { category: "차 우리는 물", words: ["정수물", "샘물", "연수", "경수"], difficulty: 2 },
+      { category: "차 우리기 순서", words: ["다관데우기", "찻잎넣기", "물붓기", "차따르기"], difficulty: 3 },
+      { category: "한국 전통차", words: ["유자차", "오미자차", "생강차", "모과차"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 265,
+    groups: [
+      { category: "요트의 주요 부위", words: ["마스트", "선체", "용골", "조타실"], difficulty: 1 },
+      { category: "요트 조종 장비", words: ["돛", "윈치", "붐", "키손잡이"], difficulty: 2 },
+      { category: "요트 항해 동작", words: ["태킹", "자이빙", "리프", "정박"], difficulty: 3 },
+      { category: "요트 안전 장비", words: ["구명뗏목", "신호탄", "방수무전기", "조난신호등"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 266,
+    groups: [
+      { category: "집 청소 도구", words: ["극세사걸레", "먼지털이개", "청소용앞치마", "틈새브러시"], difficulty: 1 },
+      { category: "청소 세제 종류", words: ["중성세제", "베이킹소다", "구연산", "산소계표백제"], difficulty: 2 },
+      { category: "욕실 청소 구역", words: ["거울", "욕조", "변기", "샤워부스"], difficulty: 3 },
+      { category: "청소 순서", words: ["환기", "정리정돈", "세제도포", "마른걸레질"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 267,
+    groups: [
+      { category: "프레젠테이션 슬라이드 구성", words: ["표지슬라이드", "목차슬라이드", "전환슬라이드", "마무리슬라이드"], difficulty: 1 },
+      { category: "프레젠테이션 시각 자료", words: ["산점도", "히트맵", "순서도", "피라미드도표"], difficulty: 2 },
+      { category: "프레젠테이션 전달 방법", words: ["시선맞추기", "핵심강조", "질문유도", "시간배분"], difficulty: 3 },
+      { category: "슬라이드 디자인 원칙", words: ["글꼴통일", "색상수제한", "줄간격", "정보위계"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 268,
+    groups: [
+      { category: "바둑 대국 용품", words: ["바둑판", "흑번", "백번", "바둑시계"], difficulty: 1 },
+      { category: "바둑 돌의 상태", words: ["활석", "사석", "단수", "패싸움"], difficulty: 2 },
+      { category: "바둑 기본 전술", words: ["축", "장문", "환격", "끊기"], difficulty: 3 },
+      { category: "바둑 대국 결과", words: ["불계승", "계가", "반집승", "덤"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 269,
+    groups: [
+      { category: "기타의 주요 부위", words: ["헤드스톡", "핑거보드", "프렛", "사운드홀"], difficulty: 1 },
+      { category: "기타 연주 보조 도구", words: ["피크", "카포", "튜너", "기타스트랩"], difficulty: 2 },
+      { category: "기타 주법", words: ["핑거스타일", "스트로크", "해머링온", "풀링오프"], difficulty: 3 },
+      { category: "기타 코드 유형", words: ["메이저코드", "마이너코드", "세븐스코드", "서스포코드"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
