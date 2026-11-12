@@ -2531,6 +2531,96 @@ export const puzzles: Puzzle[] = [
       { category: "수목원 관람 예절", words: ["식물채집금지", "출입로준수", "반려동물통제", "정숙유지"], difficulty: 4 },
     ],
   },
+  {
+    id: 280,
+    groups: [
+      { category: "발레 의상", words: ["토슈즈", "레오타드", "튜튜", "타이츠"], difficulty: 1 },
+      { category: "발레 팔 기본 위치", words: ["앙바", "앙스콩드", "앙트루아", "앙오"], difficulty: 2 },
+      { category: "발레 기본 동작", words: ["플리에", "탕뒤", "롱드장브", "바트망"], difficulty: 3 },
+      { category: "발레단의 공연 역할", words: ["프리마발레리나", "코르드발레", "솔리스트", "안무가"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 281,
+    groups: [
+      { category: "펜싱 경기장 표시 설비", words: ["펜싱피스트", "득점표시장치", "전기릴", "바닥케이블"], difficulty: 1 },
+      { category: "펜싱 보호 장비", words: ["펜싱마스크", "펜싱재킷", "펜싱글러브", "가슴보호대"], difficulty: 2 },
+      { category: "펜싱 득점 판정 용어", words: ["우선권", "유효면", "무효타", "동시타"], difficulty: 3 },
+      { category: "펜싱 기본 기술", words: ["찌르기", "베기", "파라드", "반격"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 282,
+    groups: [
+      { category: "럭비 경기장 구성", words: ["H골대", "터치라인", "트라이라인", "인골"], difficulty: 1 },
+      { category: "럭비 선수 포지션", words: ["스크럼하프", "플라이하프", "훅커", "풀백"], difficulty: 2 },
+      { category: "럭비 득점 방법", words: ["트라이", "컨버전킥", "페널티킥", "드롭골"], difficulty: 3 },
+      { category: "럭비 경기 재개 방식", words: ["스크럼", "라인아웃", "킥오프", "드롭아웃"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 283,
+    groups: [
+      { category: "다트 보드 득점 구역", words: ["싱글", "더블", "트리플", "불스아이"], difficulty: 1 },
+      { category: "다트의 구성품", words: ["배럴", "다트축", "날개", "다트팁"], difficulty: 2 },
+      { category: "다트 투구 요령", words: ["던지기자세", "시선고정", "목표조준", "릴리스"], difficulty: 3 },
+      { category: "다트 게임 규칙", words: ["501게임", "더블아웃", "버스트", "체크아웃"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 284,
+    groups: [
+      { category: "수제 제본 도구", words: ["제본송곳", "실꿰는바늘", "제본가위", "뼈접지기"], difficulty: 1 },
+      { category: "수제 제본 재료", words: ["면지", "북클로스", "제본실", "제본풀"], difficulty: 2 },
+      { category: "책의 물리적 구조", words: ["앞표지", "뒷표지", "등표지", "책갈피끈"], difficulty: 3 },
+      { category: "수제 제본 작업 순서", words: ["용지접기", "속지정렬", "실제본", "책누르기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 285,
+    groups: [
+      { category: "고고학 발굴 도구", words: ["트로웰", "발굴브러시", "토양체", "측량줄자"], difficulty: 1 },
+      { category: "고고학 발굴 기록", words: ["발굴구획도", "지층단면도", "현장사진", "유물등록번호"], difficulty: 2 },
+      { category: "고고학 연대 측정법", words: ["방사성탄소연대측정", "층위분석", "연륜연대측정", "열발광연대측정"], difficulty: 3 },
+      { category: "출토 유물 보존·관리 과정", words: ["유물세척", "파편접합", "결손복원", "수장고보관"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 286,
+    groups: [
+      { category: "미술관 관람 시설", words: ["전시실", "도슨트데스크", "물품보관함", "관람벤치"], difficulty: 1 },
+      { category: "미술 작품 설명문 항목", words: ["작품제목", "작가이름", "완성연도", "매체표기"], difficulty: 2 },
+      { category: "미술관 전시 유형", words: ["상설전", "기획전", "특별전", "순회전"], difficulty: 3 },
+      { category: "미술관 관람 예절", words: ["작품손대지않기", "보조광금지", "음료반입금지", "촬영안내따르기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 287,
+    groups: [
+      { category: "동물원 동물 사육 시설", words: ["방사장", "실외운동장", "야간사", "번식장"], difficulty: 1 },
+      { category: "동물원 동물 관리 업무", words: ["급이", "청소", "체중측정", "질병관찰"], difficulty: 2 },
+      { category: "동물원 사육 도구", words: ["먹이통", "포획망", "사료삽", "보온등"], difficulty: 3 },
+      { category: "동물원 관람 수칙", words: ["관람동선준수", "먹이주기금지", "유리두드리기금지", "관람선넘지않기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 288,
+    groups: [
+      { category: "샌드위치용 빵", words: ["브리오슈", "피타브레드", "잉글리시머핀", "프레첼롤"], difficulty: 1 },
+      { category: "샌드위치 속재료", words: ["로스트비프", "에멘탈치즈", "루콜라", "아보카도슬라이스"], difficulty: 2 },
+      { category: "샌드위치 스프레드", words: ["아이올리", "타르타르소스", "바질페스토", "크림치즈스프레드"], difficulty: 3 },
+      { category: "샌드위치 만들기·포장 용품", words: ["샌드위치프레스", "빵자르는칼", "속재료집게", "종이포장지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 289,
+    groups: [
+      { category: "유도 수련 준비물", words: ["유도복", "유도띠", "손가락테이프", "유도슬리퍼"], difficulty: 1 },
+      { category: "유도 메치기 기술", words: ["업어치기", "허리후리기", "밭다리걸기", "안다리후리기"], difficulty: 2 },
+      { category: "유도 굳히기 기술", words: ["누르기", "조르기", "꺾기", "뒤집기"], difficulty: 3 },
+      { category: "유도 경기 판정", words: ["한판", "절반", "지도", "반칙패"], difficulty: 4 },
+    ],
+  },
 ];
 
 export function getTodaysPuzzle(): Puzzle {
