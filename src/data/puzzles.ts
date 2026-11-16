@@ -2711,6 +2711,96 @@ export const puzzles: Puzzle[] = [
       { category: "바다 물놀이 안전 행동", words: ["준비운동","지정구역수영","음주입수금지","기상변화확인"], difficulty: 4 },
     ],
   },
+  {
+    id: 300,
+    groups: [
+      { category: "호텔 객실 비품", words: ["객실카드키", "미니바", "객실금고", "목욕가운"], difficulty: 1 },
+      { category: "호텔 욕실 어메니티", words: ["컨디셔너", "샤워캡", "바디로션", "면도키트"], difficulty: 2 },
+      { category: "호텔 부대시설", words: ["피트니스센터", "비즈니스센터", "연회장", "라운지바"], difficulty: 3 },
+      { category: "호텔 체크인 절차", words: ["예약조회", "신분증확인", "보증금결제", "조식안내"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 301,
+    groups: [
+      { category: "수산시장 판매 수산물", words: ["꽃게", "전복", "낙지", "도미"], difficulty: 1 },
+      { category: "수산시장 손질 도구", words: ["생선비늘치기", "회칼", "수산물집게", "고무앞치마"], difficulty: 2 },
+      { category: "수산시장 활어 보관 설비", words: ["활어수조", "에어스톤", "순환펌프", "수질여과기"], difficulty: 3 },
+      { category: "수산시장 구매 과정", words: ["시세확인", "무게달기", "손질주문", "포장수령"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 302,
+    groups: [
+      { category: "피크닉 자리 마련 용품", words: ["피크닉매트", "접이식의자", "파라솔", "보냉가방"], difficulty: 1 },
+      { category: "피크닉 음식 용기", words: ["도시락통", "종이접시", "나무포크", "음료컵"], difficulty: 2 },
+      { category: "피크닉 놀이 도구", words: ["프리스비", "고리던지기", "연날리기", "비눗방울"], difficulty: 3 },
+      { category: "피크닉 뒤 정리 행동", words: ["음식물분리", "쓰레기봉투에담기", "자리닦기", "돗자리털기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 303,
+    groups: [
+      { category: "택시 호출 정보", words: ["출발지입력", "도착지입력", "차종선택", "호출확정"], difficulty: 1 },
+      { category: "택시 내부 설비", words: ["요금미터기", "조수석칸막이", "카드결제단말기", "비상호출버튼"], difficulty: 2 },
+      { category: "택시 요금 구성", words: ["기본요금", "거리요금", "시간요금", "심야할증"], difficulty: 3 },
+      { category: "택시 하차 전 확인", words: ["목적지도착확인", "결제수단선택", "영수증요청", "소지품확인"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 304,
+    groups: [
+      { category: "드럼 세트의 북", words: ["베이스드럼", "스네어드럼", "탐탐", "플로어탐"], difficulty: 1 },
+      { category: "드럼 세트의 심벌", words: ["하이햇", "크래시심벌", "라이드심벌", "스플래시심벌"], difficulty: 2 },
+      { category: "드럼 연주 보조 도구", words: ["드럼스틱", "브러시스틱", "드럼페달", "메트로놈"], difficulty: 3 },
+      { category: "드럼 연주 기법", words: ["림샷", "고스트노트", "플램", "드럼롤"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 305,
+    groups: [
+      { category: "수제 양초 기본 재료", words: ["소이왁스", "캔들심지", "향료오일", "염료칩"], difficulty: 1 },
+      { category: "수제 양초 제작 도구", words: ["왁스용탕기", "심지탭", "계량비커", "젓개"], difficulty: 2 },
+      { category: "수제 양초 제작 과정", words: ["왁스녹이기", "향료섞기", "심지고정", "양초굳히기"], difficulty: 3 },
+      { category: "수제 양초 포장 요소", words: ["유리용기", "라벨스티커", "포장완충재", "선물상자"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 306,
+    groups: [
+      { category: "유리공예 안전 장비", words: ["보안면", "방열장갑", "보호가운", "방진마스크"], difficulty: 1 },
+      { category: "유리공예 열가공 도구", words: ["가스버너", "블로우파이프", "성형집게", "흑연패들"], difficulty: 2 },
+      { category: "유리공예 장식 재료", words: ["유리프릿", "유리봉", "금박조각", "유리물감"], difficulty: 3 },
+      { category: "유리공예 제작 과정", words: ["유리가열", "공기불어넣기", "형태다듬기", "서서히식히기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 307,
+    groups: [
+      { category: "마라톤 주행 복장", words: ["러닝셔츠", "기능성양말", "러닝모자", "암슬리브"], difficulty: 1 },
+      { category: "마라톤 휴대 용품", words: ["러닝벨트", "러닝플라스크", "에너지젤", "스포츠시계"], difficulty: 2 },
+      { category: "마라톤 코스 시설", words: ["출발아치", "급수대", "반환점", "기록측정매트"], difficulty: 3 },
+      { category: "마라톤 거리 종목", words: ["풀코스", "하프코스", "10킬로미터", "5킬로미터"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 308,
+    groups: [
+      { category: "정수기 출수 선택", words: ["냉수", "온수", "정수", "미온수"], difficulty: 1 },
+      { category: "정수기 주요 부품", words: ["정수필터", "저수조", "출수코크", "물받이판"], difficulty: 2 },
+      { category: "정수기 위생 관리", words: ["필터교체", "코크세척", "물탱크소독", "누수점검"], difficulty: 3 },
+      { category: "정수기 렌털 서비스", words: ["설치예약", "정기방문", "렌털계약", "해지신청"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 309,
+    groups: [
+      { category: "피자 도우 재료", words: ["00밀가루", "드라이이스트", "미지근한물", "도우소금"], difficulty: 1 },
+      { category: "피자용 고기 토핑", words: ["페퍼로니", "살라미", "하몽", "안초비"], difficulty: 2 },
+      { category: "피자용 치즈", words: ["부라타", "파르미자노레자노", "스카모르차", "탈레조"], difficulty: 3 },
+      { category: "피자 만들기 도구", words: ["피자스톤", "도우스크래퍼", "피자필", "피자커터"], difficulty: 4 },
+    ],
+  },
 
 ];
 
