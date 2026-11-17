@@ -2801,6 +2801,96 @@ export const puzzles: Puzzle[] = [
       { category: "피자 만들기 도구", words: ["피자스톤", "도우스크래퍼", "피자필", "피자커터"], difficulty: 4 },
     ],
   },
+  {
+    id: 310,
+    groups: [
+      { category: "졸업식 복장", words: ["학사모", "학사복", "졸업가운", "장식술"], difficulty: 1 },
+      { category: "졸업식 행사 순서", words: ["개식사", "국민의례", "학위수여", "교가제창"], difficulty: 2 },
+      { category: "졸업 기념촬영 준비물", words: ["졸업증서", "꽃다발", "학위기케이스", "카메라삼각대"], difficulty: 3 },
+      { category: "졸업식 뒤 감사 인사", words: ["감사편지쓰기", "친구와인사", "교수님께인사", "가족식사"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 311,
+    groups: [
+      { category: "법정 안의 자리", words: ["재판장석", "증인석", "방청석", "법대"], difficulty: 1 },
+      { category: "민사재판 서류", words: ["소송위임장", "답변서", "증거목록", "준비서면"], difficulty: 2 },
+      { category: "재판 진행 절차", words: ["개정", "증인신문", "변론", "선고"], difficulty: 3 },
+      { category: "법정에 참여하는 사람", words: ["재판장", "공소담당검사", "변호인", "법정경위"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 312,
+    groups: [
+      { category: "궁궐의 주요 공간", words: ["궁궐정문", "정전", "편전", "후원"], difficulty: 1 },
+      { category: "궁궐 관람 안내물", words: ["해설안내판", "관람동선", "궁궐관람표", "해설수신기"], difficulty: 2 },
+      { category: "궁궐에서 열리는 전통 행사", words: ["수문장교대식", "궁중문화행사", "전통복식체험", "야간개장"], difficulty: 3 },
+      { category: "궁궐 관람 예절", words: ["문화재손대지않기", "출입금지구역지키기", "안내선따르기", "정숙하게관람하기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 313,
+    groups: [
+      { category: "영화관 입장 전 확인 사항", words: ["상영시간", "상영관번호", "좌석번호", "관람등급"], difficulty: 1 },
+      { category: "영화관 매점 메뉴", words: ["팝콘", "나초", "치즈스틱", "오징어구이"], difficulty: 2 },
+      { category: "영화 상영관 설비", words: ["대형은막", "디지털영사기", "서라운드스피커", "리클라이너좌석"], difficulty: 3 },
+      { category: "영화관 관람 예절", words: ["휴대전화무음", "상영중대화금지", "앞좌석발차기금지", "쓰레기가져가기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 314,
+    groups: [
+      { category: "콘서트 예매 단계", words: ["예매처접속", "예매대기열통과", "좌석선택", "결제완료"], difficulty: 1 },
+      { category: "콘서트 입장에 필요한 것", words: ["QR입장코드", "예매내역화면", "공식응원봉", "공연장팔찌"], difficulty: 2 },
+      { category: "콘서트 무대 설비", words: ["메인무대", "돌출무대", "대형전광판", "스피커타워"], difficulty: 3 },
+      { category: "콘서트장 관람 수칙", words: ["공연중촬영금지", "지정좌석준수", "비상통로확보", "퇴장질서유지"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 315,
+    groups: [
+      { category: "운전면허 시험 접수 서류", words: ["응시원서", "증명사진", "접수번호", "응시수수료"], difficulty: 1 },
+      { category: "운전 기능시험 조작 장치", words: ["좌석조절레버", "방향지시등", "변속레버", "주차브레이크"], difficulty: 2 },
+      { category: "도로주행 시험 평가 항목", words: ["차로변경", "교차로통과", "T자주차", "유턴"], difficulty: 3 },
+      { category: "운전면허 종류", words: ["1종보통", "2종보통", "1종대형", "2종소형"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 316,
+    groups: [
+      { category: "에스프레소 추출 장비", words: ["반자동커피기계", "그라인더", "포터필터", "탬퍼"], difficulty: 1 },
+      { category: "우유 거품 만들기 도구", words: ["스팀완드", "밀크피처", "우유온도측정계", "마이크로폼"], difficulty: 2 },
+      { category: "에스프레소 음료 종류", words: ["마키아토", "코르타도", "피콜로라테", "아포가토"], difficulty: 3 },
+      { category: "커피 주문 때 고르는 항목", words: ["원두선택", "샷추가", "시럽변경", "얼음양조절"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 317,
+    groups: [
+      { category: "소방관 개인 보호 장비", words: ["방염두건", "공기통배낭", "소방안전화", "화재진압용헬멧"], difficulty: 1 },
+      { category: "화재 진압 장비", words: ["소방호스", "관창", "소화전", "포소화약제"], difficulty: 2 },
+      { category: "소방차 종류", words: ["펌프차", "물탱크차", "굴절사다리차", "구조공작차"], difficulty: 3 },
+      { category: "119 신고 때 알려야 할 정보", words: ["화재발생장소", "건물층수", "연소물질", "고립인원"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 318,
+    groups: [
+      { category: "헌혈 전 건강 확인", words: ["혈압측정", "혈액형검사", "헤모글로빈검사", "문진표작성"], difficulty: 1 },
+      { category: "헌혈 과정에서 쓰는 물품", words: ["채혈침", "혈액팩", "지혈밴드", "알코올스왑"], difficulty: 2 },
+      { category: "헌혈 뒤 휴게 공간 제공품", words: ["과일주스", "과자", "기념품", "헌혈증서"], difficulty: 3 },
+      { category: "헌혈 뒤 지켜야 할 행동", words: ["물마시기", "충분히쉬기", "음주피하기", "격한운동피하기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 319,
+    groups: [
+      { category: "지하철역 승객 시설", words: ["승하차게이트", "교통카드충전기", "무인발권기", "짐보관사물함"], difficulty: 1 },
+      { category: "지하철 승강장 안내물", words: ["노선도", "열차도착안내판", "승차위치표시", "안전문"], difficulty: 2 },
+      { category: "지하철 객차 내부 설비", words: ["손잡이", "우선석", "휠체어전용공간", "비상인터폰"], difficulty: 3 },
+      { category: "지하철 이용 예절", words: ["먼저내리기", "한줄로서기", "백팩앞으로메기", "통화자제하기"], difficulty: 4 },
+    ],
+  },
 
 ];
 
