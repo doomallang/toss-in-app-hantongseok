@@ -2891,6 +2891,96 @@ export const puzzles: Puzzle[] = [
       { category: "지하철 이용 예절", words: ["먼저내리기", "한줄로서기", "백팩앞으로메기", "통화자제하기"], difficulty: 4 },
     ],
   },
+  {
+    id: 320,
+    groups: [
+      { category: "주민센터에서 처리하는 민원", words: ["전입신고창구", "주민등록등본발급", "인감증명발급", "복지상담창구"], difficulty: 1 },
+      { category: "주민센터 민원 신청 준비물", words: ["대리인신분증", "도장", "위임장", "수수료"], difficulty: 2 },
+      { category: "주민센터 무인민원발급기 서비스", words: ["등본출력", "가족관계증명서출력", "지방세증명출력", "제적등본출력"], difficulty: 3 },
+      { category: "주민센터 민원 처리 절차", words: ["번호표뽑기", "신청서작성", "본인확인", "서류수령"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 321,
+    groups: [
+      { category: "자동차 보험 보장 항목", words: ["대인배상", "대물배상", "자기신체사고", "자기차량손해"], difficulty: 1 },
+      { category: "교통사고 현장 조치", words: ["비상등켜기", "삼각대설치", "부상자확인", "경찰신고"], difficulty: 2 },
+      { category: "자동차 보험 사고 접수 정보", words: ["사고일시", "발생지점", "상대차량번호", "충돌상황"], difficulty: 3 },
+      { category: "자동차 보험 계약 정보", words: ["보험기간", "피보험자", "자기부담금", "특약"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 322,
+    groups: [
+      { category: "노래방 실내 장비", words: ["노래선곡기", "무선마이크", "리모컨", "점수화면"], difficulty: 1 },
+      { category: "노래방 이용 요금 방식", words: ["시간제요금", "곡당요금", "주간할인", "현금결제"], difficulty: 2 },
+      { category: "노래 선곡 화면 항목", words: ["가수이름검색", "곡제목검색", "인기차트", "예약목록"], difficulty: 3 },
+      { category: "노래방 이용 예절", words: ["마이크돌려쓰기", "예약순서지키기", "음량조절하기", "실내금연"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 323,
+    groups: [
+      { category: "3D 프린터 주요 부품", words: ["압출기", "노즐", "빌드플레이트", "필라멘트릴"], difficulty: 1 },
+      { category: "3D 프린팅 재료", words: ["PLA필라멘트", "ABS필라멘트", "레진", "서포트재"], difficulty: 2 },
+      { category: "3D 모델링 파일 형식", words: ["STL", "OBJ", "3MF", "G코드"], difficulty: 3 },
+      { category: "3D 프린팅 작업 순서", words: ["모델설계", "슬라이싱", "출력시작", "후처리"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 324,
+    groups: [
+      { category: "취업 면접 복장", words: ["정장재킷", "단색셔츠", "면접용구두", "서류가방"], difficulty: 1 },
+      { category: "면접 전 준비 자료", words: ["이력서", "자기소개서", "포트폴리오", "채용공고"], difficulty: 2 },
+      { category: "면접에서 받는 질문", words: ["지원동기", "직무경험", "장단점", "입사후포부"], difficulty: 3 },
+      { category: "면접 뒤 행동", words: ["감사메일보내기", "결과일정확인", "경험복기", "추가서류제출"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 325,
+    groups: [
+      { category: "스마트홈 제어 기기", words: ["스마트스피커", "스마트리모컨", "홈게이트웨이", "월패드"], difficulty: 1 },
+      { category: "스마트홈 연결 가전", words: ["자동청소로봇", "스마트조명", "스마트플러그", "스마트도어록"], difficulty: 2 },
+      { category: "스마트홈 자동화 조건", words: ["시간예약", "움직임감지", "온도기준", "음성명령"], difficulty: 3 },
+      { category: "스마트홈 보안 관리", words: ["비밀번호변경", "펌웨어업데이트", "접근권한설정", "공유기보안"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 326,
+    groups: [
+      { category: "입학식 행사 준비물", words: ["입학통지서", "실내화", "필기도구", "보조가방"], difficulty: 1 },
+      { category: "입학식 행사 순서", words: ["신입생입장", "국민의례진행", "교장선생님말씀", "담임소개"], difficulty: 2 },
+      { category: "새 학기 교실 물품", words: ["시간표", "이름표", "사물함", "학급게시판"], difficulty: 3 },
+      { category: "학교 생활 안내 항목", words: ["급식시간", "등하교시간", "생활규칙", "준비물안내"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 327,
+    groups: [
+      { category: "복싱 선수 보호 장비", words: ["헤드기어", "마우스피스", "핸드랩", "복싱글러브"], difficulty: 1 },
+      { category: "복싱 경기장 구성", words: ["복싱링", "코너포스트", "로프", "라운드벨"], difficulty: 2 },
+      { category: "복싱 기본 펀치", words: ["잽", "스트레이트", "훅", "어퍼컷"], difficulty: 3 },
+      { category: "복싱 경기 판정", words: ["유효타", "다운", "카운트", "판정승"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 328,
+    groups: [
+      { category: "장보기 이동 도구", words: ["접이식쇼핑백", "카트", "장바구니바퀴", "보냉백"], difficulty: 1 },
+      { category: "마트 식품 판매 구역", words: ["농산코너", "정육코너", "수산코너", "유제품코너"], difficulty: 2 },
+      { category: "장보기 가격 확인물", words: ["진열가격표", "할인스티커", "원산지표시", "유통기한표시"], difficulty: 3 },
+      { category: "장보기 결제 단계", words: ["물건담기", "계산대줄서기", "바코드스캔", "영수증받기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 329,
+    groups: [
+      { category: "도시공원 휴식 시설", words: ["벤치", "정자", "음수대", "그늘막"], difficulty: 1 },
+      { category: "도시공원 운동 시설", words: ["평행봉", "팔굽혀펴기기구", "걷기트랙", "야외운동기구"], difficulty: 2 },
+      { category: "도시공원 안내 표지", words: ["공원지도", "개방시간안내", "반려동물안내", "금연구역표지"], difficulty: 3 },
+      { category: "도시공원 이용 수칙", words: ["잔디밭보호", "분리배출하기", "자전거천천히타기", "야생동물먹이금지"], difficulty: 4 },
+    ],
+  },
 
 ];
 
