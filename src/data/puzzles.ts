@@ -3071,6 +3071,96 @@ export const puzzles: Puzzle[] = [
       { category: "대학 축제 안전 안내 항목", words: ["비상대피로", "소화기위치", "응급실연락처", "혼잡시간안내"], difficulty: 4 },
     ],
   },
+  {
+    id: 340,
+    groups: [
+      { category: "렌터카 예약 정보", words: ["대여일시", "반납일시", "차량등급", "운전자나이"], difficulty: 1 },
+      { category: "렌터카 인수 전 확인 부위", words: ["연료잔량", "주행거리", "타이어마모", "외관흠집"], difficulty: 2 },
+      { category: "렌터카 운전 중 휴대 서류", words: ["운전면허증", "대여계약서", "보험증서", "비상연락처"], difficulty: 3 },
+      { category: "렌터카 반납 절차", words: ["주유영수증", "주차위치확인", "차량상태점검", "보증금정산"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 341,
+    groups: [
+      { category: "주택 청약 신청 자격", words: ["무주택기간", "청약통장가입기간", "부양가족수", "거주지역"], difficulty: 1 },
+      { category: "주택 청약 제출 서류", words: ["주민등록등본", "가족관계증명서", "소득확인서", "납세증명서"], difficulty: 2 },
+      { category: "청약 당첨 뒤 계약 단계", words: ["당첨자발표", "계약금납부", "서류검증", "입주예정일확인"], difficulty: 3 },
+      { category: "아파트 입주자 모집 공고 항목", words: ["공급세대수", "분양가격", "특별공급", "청약일정"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 342,
+    groups: [
+      { category: "어린이집 교실 영역", words: ["쌓기놀이영역", "역할놀이영역", "언어영역", "미술영역"], difficulty: 1 },
+      { category: "어린이집 일과 순서", words: ["등원맞이", "자유놀이", "점심식사", "낮잠시간"], difficulty: 2 },
+      { category: "어린이집 준비물", words: ["여벌옷", "기저귀", "개인물병", "낮잠이불"], difficulty: 3 },
+      { category: "가정통신문 안내 항목", words: ["행사일정", "준비물목록", "급식식단표", "알림장"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 343,
+    groups: [
+      { category: "지역 축제 공연장 시설", words: ["주무대", "객석의자", "음향스피커", "조명탑"], difficulty: 1 },
+      { category: "지역 축제 체험 부스 물품", words: ["체험권", "안내책자", "재료꾸러미", "손소독제"], difficulty: 2 },
+      { category: "지역 축제 먹거리 부스 운영물", words: ["일회용조리장갑", "조리대", "주문표", "메뉴가격표"], difficulty: 3 },
+      { category: "지역 축제 안전 관리 요소", words: ["인파관리선", "행사안전요원", "미아보호소", "응급의료부스"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 344,
+    groups: [
+      { category: "학교 급식 조리 시설", words: ["대형국솥", "배식카트", "식기세척기", "보온배식대"], difficulty: 1 },
+      { category: "학교 급식 식단 구성", words: ["밥류", "국물요리", "반찬", "후식"], difficulty: 2 },
+      { category: "급식실 위생 복장", words: ["위생모", "위생마스크", "조리복상의", "조리장화"], difficulty: 3 },
+      { category: "급식실 이용 순서", words: ["손세정", "식판받기", "배식받기", "잔반정리"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 345,
+    groups: [
+      { category: "시내버스 정류장 시설", words: ["승차대", "버스노선안내판", "도착정보판", "교통카드단말기"], difficulty: 1 },
+      { category: "시내버스 내부 시설", words: ["하차벨", "승객손잡이", "휠체어공간", "요금함"], difficulty: 2 },
+      { category: "시내버스 승차 절차", words: ["버스도착확인", "앞문승차", "카드태그", "빈자리찾기"], difficulty: 3 },
+      { category: "시내버스 하차 예절", words: ["미리하차벨누르기", "통로비켜주기", "뒷문하차", "승하차주의"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 346,
+    groups: [
+      { category: "독서 모임 진행 역할", words: ["사회자", "발제자", "기록자", "시간관리자"], difficulty: 1 },
+      { category: "독서 모임 토론 자료", words: ["발제문", "인용문", "질문지", "메모지"], difficulty: 2 },
+      { category: "독서 모임에서 나누는 의견", words: ["인상깊은장면", "주제의식", "등장인물해석", "결말감상"], difficulty: 3 },
+      { category: "독서 모임 운영 약속", words: ["발언순서", "경청", "시간준수", "스포일러주의"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 347,
+    groups: [
+      { category: "푸드트럭 조리 시설", words: ["이동식조리대", "환기후드", "냉장보관함", "가스레인지"], difficulty: 1 },
+      { category: "푸드트럭 판매 창구 물품", words: ["주문벨", "메뉴입간판", "카드결제기", "포장용기"], difficulty: 2 },
+      { category: "푸드트럭 영업 준비", words: ["영업장소허가", "식재료손질", "위생점검표", "가격게시"], difficulty: 3 },
+      { category: "푸드트럭 고객 안전 안내", words: ["대기줄안내", "알레르기표시", "화상주의표지", "쓰레기통"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 348,
+    groups: [
+      { category: "뮤지컬 제작진", words: ["작곡가", "작사가", "안무연출가", "음악감독"], difficulty: 1 },
+      { category: "뮤지컬 무대 장치", words: ["회전무대", "승강무대", "장면막", "무대세트"], difficulty: 2 },
+      { category: "뮤지컬 배우 역할", words: ["주연배우", "조연배우", "군무배우", "스윙배우"], difficulty: 3 },
+      { category: "뮤지컬 관람 준비", words: ["예매내역", "공연장위치", "입장시간", "인터미션확인"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 349,
+    groups: [
+      { category: "스마트워치 건강 측정 기능", words: ["심박수측정", "혈중산소측정", "수면기록", "걸음수측정"], difficulty: 1 },
+      { category: "스마트워치 운동 기록 항목", words: ["운동시간", "이동거리", "소모칼로리", "운동경로"], difficulty: 2 },
+      { category: "스마트워치 알림 설정", words: ["전화수신", "문자수신", "일정알림", "앱알림"], difficulty: 3 },
+      { category: "스마트워치 충전 관리", words: ["충전케이블", "충전독", "배터리잔량", "절전모드"], difficulty: 4 },
+    ],
+  },
 
 ];
 
