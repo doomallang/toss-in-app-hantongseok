@@ -3161,6 +3161,96 @@ export const puzzles: Puzzle[] = [
       { category: "스마트워치 충전 관리", words: ["충전케이블", "충전독", "배터리잔량", "절전모드"], difficulty: 4 },
     ],
   },
+  {
+    id: 350,
+    groups: [
+      { category: "핸드볼 경기장 구역", words: ["골에어리어", "자유투라인", "7미터라인", "교체구역"], difficulty: 1 },
+      { category: "핸드볼 선수 포지션", words: ["레프트윙", "라이트윙", "레프트백", "라이트백"], difficulty: 2 },
+      { category: "핸드볼 공격 동작", words: ["드리블", "패스", "점프슛", "돌파"], difficulty: 3 },
+      { category: "핸드볼 경기 진행 용어", words: ["드로오프", "스로인", "골스로", "타임아웃"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 351,
+    groups: [
+      { category: "스노보드 기본 장비", words: ["스노보드데크", "리쉬코드", "데크패드", "보드헬멧"], difficulty: 1 },
+      { category: "스노보드 복장", words: ["방수재킷", "보드팬츠", "엉덩이보호대", "방한장갑"], difficulty: 2 },
+      { category: "스노보드 슬로프 표지", words: ["초급코스", "중급코스", "상급코스", "리프트탑승장"], difficulty: 3 },
+      { category: "스노보드 기본 자세", words: ["레귤러스탠스", "구피스탠스", "무릎굽히기", "시선처리"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 352,
+    groups: [
+      { category: "목장 체험 동물", words: ["젖소", "양", "염소", "조랑말"], difficulty: 1 },
+      { category: "목장 동물 먹이", words: ["건초", "사료알갱이", "옥수수사료", "당근조각"], difficulty: 2 },
+      { category: "목장 체험 활동", words: ["송아지우유주기", "건초주기", "치즈만들기", "트랙터타기"], difficulty: 3 },
+      { category: "목장 체험 안전 수칙", words: ["울타리안넘기", "체험뒤손세정", "동물놀라게하지않기", "먹이적정량지키기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 353,
+    groups: [
+      { category: "전통시장 판매 구역", words: ["채소가게", "정육점", "건어물가게", "반찬가게"], difficulty: 1 },
+      { category: "전통시장 장보기 도구", words: ["천가방", "접이식카트", "보냉상자", "장보기바구니"], difficulty: 2 },
+      { category: "전통시장 가격 표시", words: ["단가안내문", "원산지표시판", "할인문구", "묶음판매표시"], difficulty: 3 },
+      { category: "전통시장 이용 예절", words: ["시식전허락받기", "통로막지않기", "물건조심히다루기", "현금미리준비하기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 354,
+    groups: [
+      { category: "주유소 주유기 구성", words: ["유량표시창", "주유호스", "주유건", "결제화면"], difficulty: 1 },
+      { category: "주유소에서 파는 자동차 용품", words: ["워셔액", "연료첨가제", "차량용방향제", "유리세정티슈"], difficulty: 2 },
+      { category: "셀프 주유 순서", words: ["유종선택", "주유구열기", "주유량설정", "결제내역확인"], difficulty: 3 },
+      { category: "주유소 안전 행동", words: ["시동끄기", "휴대전화사용안하기", "화기멀리하기", "정전기주의하기"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 355,
+    groups: [
+      { category: "이발소 기본 도구", words: ["바리캉", "이발가위", "빗살", "면도솔"], difficulty: 1 },
+      { category: "이발소에서 쓰는 위생 물품", words: ["목보", "소독액", "일회용면도날", "수건함"], difficulty: 2 },
+      { category: "이발소 머리 손질", words: ["다듬기", "면도", "두피세정", "드라이"], difficulty: 3 },
+      { category: "이발 전 요청 사항", words: ["원하는길이", "가르마방향", "옆머리정리", "구레나룻모양"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 356,
+    groups: [
+      { category: "동물병원 접수 정보", words: ["보호자성명", "반려동물이름", "품종", "예방접종기록"], difficulty: 1 },
+      { category: "동물병원 진료 장비", words: ["동물용청진기", "검이경", "진료대", "엑스레이장비"], difficulty: 2 },
+      { category: "반려동물 건강 검진 항목", words: ["체형확인", "체온측정", "혈액검사", "귀검사"], difficulty: 3 },
+      { category: "동물병원 진료 뒤 안내", words: ["투약방법", "재진날짜", "식이관리", "이상증상확인"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 357,
+    groups: [
+      { category: "세무서 민원 창구 업무", words: ["사업자등록", "소득세신고", "증명서발급", "상담예약"], difficulty: 1 },
+      { category: "세금 신고 준비 서류", words: ["본인확인서류", "매출자료", "지출증빙", "계좌번호"], difficulty: 2 },
+      { category: "세금 납부 방법", words: ["가상계좌납부", "신용카드납부", "은행창구납부", "모바일납부"], difficulty: 3 },
+      { category: "세무서 방문 전 확인 사항", words: ["신고기한", "필요서류", "업무시간", "관할세무서"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 358,
+    groups: [
+      { category: "출판사 책 기획 요소", words: ["독자층", "책주제", "예상쪽수", "출간시기"], difficulty: 1 },
+      { category: "책 원고 편집 과정", words: ["교정", "교열", "윤문", "교정지확인"], difficulty: 2 },
+      { category: "책 표지 구성 요소", words: ["제목글자", "저자명", "표지그림", "띠지"], difficulty: 3 },
+      { category: "출간 뒤 홍보 활동", words: ["서평배포", "북토크", "SNS홍보", "저자사인회"], difficulty: 4 },
+    ],
+  },
+  {
+    id: 359,
+    groups: [
+      { category: "팟캐스트 녹음 장비", words: ["콘덴서마이크", "믹서", "팝필터", "마이크암"], difficulty: 1 },
+      { category: "팟캐스트 방송 구성", words: ["오프닝멘트", "메인토크", "청취자사연", "클로징멘트"], difficulty: 2 },
+      { category: "팟캐스트 편집 작업", words: ["무음구간삭제", "잡음제거", "음량조절", "인트로삽입"], difficulty: 3 },
+      { category: "팟캐스트 공개 전 확인", words: ["에피소드제목", "소개글", "표지이미지", "공개예약"], difficulty: 4 },
+    ],
+  },
 
 ];
 
